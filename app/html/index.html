@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runny U</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./../css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo-university.png" alt="Logo Runny U">
+            <h1>Runny <span>U</span></h1>
+        </div>
+        <div class="search-container">
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Buscar restaurante...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
+                <li><a href="sign-up.html"><i class="fas fa-user-plus"></i> Registrarse</a></li>
+                <li><a href="#restaurants"><i class="fas fa-utensils"></i> Restaurantes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Evita las filas, disfruta tu comida</h2>
+                <p>Realiza pedidos anticipados en los restaurantes de tu universidad y recógelos cuando quieras</p>
+                <a href="sign-up.html" class="cta-button">Regístrate con tu correo universitario</a>
+            </div>
+        </section>
+
+        <section id="search-results" class="search-results" style="display: none;">
+            <h2>Resultados de búsqueda</h2>
+            <div class="results-grid"></div>
+        </section>
+
+        <section id="restaurants" class="restaurants">
+            <h2>Restaurantes disponibles en el campus</h2>
+            <div class="restaurant-grid">
+                <!-- Ejemplo de tarjeta de restaurante -->
+                <div class="restaurant-card">
+                    <div class="restaurant-img" style="background-image: url('../assets/srgourmet.jpg');"></div>
+                    <div class="restaurant-info">
+                        <h3>Sr.Gourmet</h3>
+                        <p><i class="fas fa-clock"></i> Abierto 6:00-19:00</p>
+                        <p><i class="fas fa-walking"></i> Bloque 4, Planta Baja (Boulevard de comidas)</p>
+                        <a href="menu.html" class="view-menu">Ver menú</a>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+
+                    <div class="restaurant-img" style="background-image: url('../assets/dogger.jpg');"></div>
+                    <div class="restaurant-info">
+                        <h3>Dogger</h3>
+                        <p><i class="fas fa-clock"></i> Abierto 10:00-20:00</p>
+                        <p><i class="fas fa-walking"></i> Bloque 4, Planta Baja (Boulevard de comidas)</p>
+                        <a href="menu.html" class="view-menu">Ver menú</a>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+
+                    <div class="restaurant-img" style="background-image: url('../assets/pimientoz.jpg');"></div>
+                    <div class="restaurant-info">
+                        <h3>Pimiento'z</h3>
+                        <p><i class="fas fa-clock"></i> Abierto 11:00-20:00</p>
+                        <p><i class="fas fa-walking"></i> Bloque 16, Planta Baja (Piedras)</p>
+                        <a href="menu.html" class="view-menu">Ver menú</a>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+
+                    <div class="restaurant-img" style="background-image: url('../assets/nativos.jpg');"></div>
+                    <div class="restaurant-info">
+                        <h3>Nativos</h3>
+                        <p><i class="fas fa-clock"></i> Abierto 11:00-18:00</p>
+                        <p><i class="fas fa-walking"></i> Bloque 12, Detrás de bloque 12 (fuente)</p>
+                        <a href="menu.html" class="view-menu">Ver menú</a>
+                    </div>
+                </div>
+
+                <!-- Más restaurantes... -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Runny U</h3>
+                <p>Plataforma oficial de pedidos de la universidad</p>
+            </div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> contacto@runnyu.edu</li>
+                    <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Términos de servicio</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Runny U - Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+
+</html>
