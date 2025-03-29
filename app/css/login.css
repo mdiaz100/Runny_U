@@ -1,0 +1,245 @@
+:root {
+    --primary: #780000; 
+    --secondary: #ffab00; 
+    --accent: #c1121f; 
+    --light-bg: #f5f5f6;
+    --dark-text: #2c3e50;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+}
+
+/* Estilos para autenticación */
+.auth-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.auth-card {
+    flex: 1;
+    max-width: 500px;
+    padding: 3rem 2rem;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-image {
+    flex: 1;
+    background: linear-gradient(rgba(94, 1, 1, 0.7), rgba(130, 3, 3, 0.7)), 
+                url('../assets/campus2.jpeg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    display: none; /* Oculto en móviles */
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-logo {
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.auth-header h1 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.auth-header h1 span {
+    color: var(--secondary);
+}
+
+.auth-header p {
+    color: #666;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.input-group input {
+    padding: 0.8rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.2);
+}
+
+.password-input {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #777;
+    cursor: pointer;
+}
+
+.error-message {
+    color: var(--accent);
+    font-size: 0.9rem;
+    height: 1rem;
+}
+
+.options-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.forgot-password {
+    font-size: 0.9rem;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.auth-button {
+    background: linear-gradient(90deg, var(--primary), #e5b405);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.auth-button:hover {
+    background: linear-gradient(90deg, #a21f1f, #b02727);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(106, 27, 154, 0.2);
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 1rem;
+    color: #666;
+}
+
+.auth-footer a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+.university-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.university-badge i {
+    color: var(--primary);
+}
+
+.back-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.back-button:hover {
+    background-color: #fff6e6;
+    text-decoration: none;
+}
+
+.back-button i {
+    font-size: 14px;
+}
+
+
+/* Responsive */
+@media (min-width: 768px) {
+    .auth-image {
+        display: flex;
+    }
+    
+    .auth-card {
+        padding: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .auth-card {
+        padding: 3rem 5rem;
+    }
+}

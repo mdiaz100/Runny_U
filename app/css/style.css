@@ -51,13 +51,13 @@ header {
 }
 
 /* Navegación */
-nav ul.menu {
+nav ul.menu-header {
     display: flex;
     list-style: none;
     gap: 1.5rem;
 }
 
-nav ul.menu li a {
+nav ul.menu-header li a {
     color: var(--dark-text);
     text-decoration: none;
     font-weight: 600;
@@ -69,7 +69,7 @@ nav ul.menu li a {
     gap: 5px;
 }
 
-nav ul.menu li a:hover {
+nav ul.menu-header li a:hover {
     background-color: var(--primary);
     color: var(--white);
 }
@@ -173,7 +173,7 @@ nav ul.menu li a:hover {
 }
 
 .view-menu:hover {
-    background-color: #4a148c;
+    background-color: #f6450a;
 }
 
 /* Footer institucional */
@@ -233,13 +233,13 @@ footer {
         margin-bottom: 1rem;
     }
 
-    nav ul.menu {
+    nav ul.menu-header {
         flex-direction: column;
         gap: 0.5rem;
         width: 100%;
     }
 
-    nav ul.menu li a {
+    nav ul.menu-header li a {
         justify-content: center;
     }
 

@@ -1,11 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión</title>
+    <title>Runny U - Inicio de sesión</title>
+    <link rel="stylesheet" href="./../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    dgsdfsd
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <img src="images/logo-university.png" alt="Logo Runny U" class="auth-logo">
+                <h1>Inicia sesión en <span>Runny U</span></h1>
+                <p>Usa tu correo institucional</p>
+            </div>
+
+            <form id="login-form" class="auth-form">
+                <div class="input-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Correo electrónico</label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="tucorreo@soyudemedellin.edu.co">
+                    <div class="error-message" id="email-error"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
+                    <div class="password-input">
+                        <input type="password" id="password" name="password" required
+                               placeholder="Ingresa tu contraseña">
+                        <button type="button" class="toggle-password">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="password-error"></div>
+                </div>
+
+                <div class="options-group">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember"> Recordar mi sesión
+                    </label>
+                    <a href="forgot-password.html" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button type="submit" class="auth-button">
+                    <i class="fas fa-sign-in-alt"></i> Iniciar sesión
+                </button>
+
+                <div class="auth-footer">
+                    ¿No tienes una cuenta? <a href="sign-up.html">Regístrate aquí</a>
+                </div>
+                <div class="back-button-container">
+                    <button class="back-button" onclick="window.location.href='index.html'">
+                        <i class="fas fa-arrow-left"></i> Regresar al inicio
+                    </button>
+                </div>
+            </form>
+
+            <div class="university-badge">
+                <i class="fas fa-university"></i>
+                <p>Solo para miembros de la universidad</p>
+            </div>
+        </div>
+
+        <div class="auth-image">
+            <img src="../assets/logoudm.png" alt="Campus universitario">
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
 </body>
 </html>
