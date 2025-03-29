@@ -1,29 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse</title>
-    <link rel="stylesheet" href="./../css/style.css">
+    <link rel="stylesheet" href="./../css/sign-up.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 <body>
-    <main>
-        <section id="login-box">
-            <h2>Registro de usuario</h2>
-            <label>Nombre de usuario</label>
-            <input type="text" id="username"/>
-            <label>Nombre</label>
-            <input type="text" id="name"/>
-            <label>Email</label>
-            <input type="text" id="email"/>
-            <label>Contraseña</label>
-            <input type="password" id="password" placeholder="Ingrese contraseña"/>
-            <label>Repita contraseña</label>
-            <input type="password" id="retype-password" placeholder="Ingrese contraseña"/>
-            <a href="index.html" class="primary">Regresar</a>
-            <a href="home.html" class="secondary">Crear</a>
-        </section>
-    </main>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <img src="images/logo-university.png" alt="Logo Runny U" class="auth-logo">
+                <h1>Regístrate en <span>Runny U</span></h1>
+                <p>Crea tu cuenta con tu correo institucional</p>
+            </div>
 
+            <form id="signup-form" class="auth-form">
+                <div class="input-group">
+                    <label for="fullname"><i class="fas fa-user"></i> Nombre completo</label>
+                    <input type="text" id="fullname" name="fullname" required 
+                           placeholder="Ej: María González">
+                    <div class="error-message" id="name-error"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Correo electrónico</label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="tucorreo@soyudemedellin.edu.co">
+                    <div class="error-message" id="email-error"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
+                    <div class="password-input">
+                        <input type="password" id="password" name="password" required
+                               placeholder="Crea una contraseña segura">
+                        <button type="button" class="toggle-password">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="password-hint">
+                        Mínimo 8 caracteres, incluye números y letras
+                    </div>
+                    <div class="error-message" id="password-error"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="confirm-password"><i class="fas fa-lock"></i> Confirmar contraseña</label>
+                    <div class="password-input">
+                        <input type="password" id="confirm-password" name="confirm-password" required
+                               placeholder="Repite tu contraseña">
+                        <button type="button" class="toggle-password">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="confirm-error"></div>
+                </div>
+
+                <div class="options-group">
+                    <label class="terms-check">
+                        <input type="checkbox" name="terms" required> Acepto los <a href="#">términos y condiciones</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="auth-button">
+                    <i class="fas fa-user-plus"></i> Crear cuenta
+                </button>
+
+                <div class="auth-footer">
+                    ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a>
+                </div>
+
+                <div class="back-button-container">
+                    <button class="back-button" onclick="window.location.href='index.html'">
+                        <i class="fas fa-arrow-left"></i> Regresar al inicio
+                    </button>
+                </div>
+            </form>
+
+            <div class="university-badge">
+                <i class="fas fa-university"></i>
+                <p>Solo para miembros de la universidad</p>
+            </div>
+        </div>
+
+        <div class="auth-image">
+            <img src="../assets/logoudm.png" alt="Campus universitario">
+        </div>
+    </div>
+
+    <script src="js/signup.js"></script>
 </body>
+
 </html>

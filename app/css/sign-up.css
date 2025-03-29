@@ -2,10 +2,12 @@
     --primary: #780000; 
     --secondary: #ffab00; 
     --accent: #c1121f; 
+    --success: #4CAF50; 
     --light-bg: #f5f5f6;
     --dark-text: #2c3e50;
     --white: #ffffff;
 }
+
 
 * {
     margin: 0;
@@ -19,7 +21,7 @@ body {
     color: var(--dark-text);
 }
 
-/* Estilos para autenticación */
+/* Contenedores*/
 .auth-container {
     display: flex;
     min-height: 100vh;
@@ -43,9 +45,10 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
-    display: none; /* Oculto en móviles */
+    display: none;
 }
 
+/* Header */
 .auth-header {
     text-align: center;
     margin-bottom: 2rem;
@@ -69,6 +72,7 @@ body {
     color: #666;
 }
 
+/* Formulario*/
 .auth-form {
     display: flex;
     flex-direction: column;
@@ -84,6 +88,9 @@ body {
 .input-group label {
     font-weight: 600;
     color: var(--dark-text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .input-group input {
@@ -97,19 +104,38 @@ body {
 .input-group input:focus {
     border-color: var(--primary);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.2);
+    box-shadow: 0 0 0 3px rgba(120, 0, 0, 0.2);
 }
 
-
-.password-container {
-    width: 100%;
-    max-width: 400px; 
-    margin: 0 auto;
+/* Estilos específicos para registro */
+.password-hint {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 0.25rem;
+    font-style: italic;
 }
 
-.password-input input {
-    width: 100% !important;
-    min-width: 300px; 
+.terms-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.terms-check a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.terms-check a:hover {
+    text-decoration: underline;
+}
+
+/* Password toggle*/
+.password-input {
+    position: relative;
 }
 
 .toggle-password {
@@ -123,34 +149,47 @@ body {
     cursor: pointer;
 }
 
+
 .error-message {
     color: var(--accent);
     font-size: 0.9rem;
     height: 1rem;
+    font-weight: 500;
 }
 
-.options-group {
+.password-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Campos de la contraseña*/
+.password-input input {
+    width: 100% !important;
+    min-width: 300px; 
+}
+
+/* Estilo para el texto de requisitos de la contraseña */
+.password-requirements {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 5px 0 15px;
+    font-style: italic;
+}
+
+/* Checkbox de confirmación */
+.confirm-checkbox {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 8px;
+    margin: 10px 0;
 }
 
-.remember-me {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
+.confirm-checkbox input[type="checkbox"] {
+    transform: scale(1.2); 
+    margin-right: 5px;
 }
 
-.forgot-password {
-    font-size: 0.9rem;
-    color: var(--primary);
-    text-decoration: none;
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
 
 .auth-button {
     background: linear-gradient(90deg, var(--primary), #e5b405);
@@ -171,8 +210,9 @@ body {
 .auth-button:hover {
     background: linear-gradient(90deg, #a21f1f, #b02727);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(106, 27, 154, 0.2);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
 }
+
 
 .auth-footer {
     text-align: center;
@@ -206,6 +246,7 @@ body {
     color: var(--primary);
 }
 
+
 .back-button-container {
     text-align: center;
     margin-top: 20px;
@@ -230,12 +271,7 @@ body {
     text-decoration: none;
 }
 
-.back-button i {
-    font-size: 14px;
-}
-
-
-/* Responsive */
+/* Responsive (igual que login) */
 @media (min-width: 768px) {
     .auth-image {
         display: flex;
@@ -251,3 +287,17 @@ body {
         padding: 3rem 5rem;
     }
 }
+
+/* @media (max-height: 400px) {
+    .auth-header {
+        display: none;
+    }
+    .auth-form {
+        gap: 0.5rem;
+    }
+}
+@media (min-width: 992px) and (min-height: 700px) {
+    .auth-image {
+        display: flex;
+    }
+} */
