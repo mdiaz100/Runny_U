@@ -121,6 +121,7 @@ nav ul.menu-header li a:hover {
     text-align: center;
     margin-bottom: 2rem;
     color: var(--primary);
+    font-size: 2.5rem;
 }
 
 .restaurant-grid {
@@ -321,4 +322,170 @@ footer {
         width: 100%;
         margin: 1rem 0 0;
     }
+}
+
+.promotions {
+    padding: 3rem 2rem;
+    background-color: #fff9f9;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.promotions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.promotion-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.promotion-card:hover {
+    transform: translateY(-5px);
+}
+
+.promotion-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--accent);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+.promotion-img {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.promotion-img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+}
+
+.promotion-content {
+    padding: 1.5rem;
+}
+
+.promotion-content h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.restaurant-name {
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.promo-desc {
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.promo-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.promo-button {
+    width: 100%;
+    padding: 0.7rem;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.promo-button:hover {
+    background: linear-gradient(to right, var(--accent), var(--primary));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .promotions {
+        padding: 2rem 1rem;
+    }
+    
+    .promotions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Botón CTA principal */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), #9e7100);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgb(230, 207, 2);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #9e0000, #9e7c00);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(120, 0, 0, 0.4);
+}
+
+.cta-button:active {
+    transform: translateY(1px);
+}
+
+.cta-button i {
+    margin-right: 8px;
+    font-size: 0.9em;
 }

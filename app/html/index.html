@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="images/logo-university.png" alt="Logo Runny U">
+            <img src="../assets/logorunny.png" alt="Logo Runny U">
             <h1>Runny <span>U</span></h1>
         </div>
         <div class="search-container">
@@ -35,7 +35,67 @@
             <div class="hero-content">
                 <h2>Evita las filas, disfruta tu comida</h2>
                 <p>Realiza pedidos anticipados en los restaurantes de tu universidad y recógelos cuando quieras</p>
-                <a href="sign-up.html" class="cta-button">Regístrate con tu correo universitario</a>
+                <button onclick="window.location.href='sign-up.html'" class="cta-button">
+                    <i class="fas fa-user-plus"></i> Regístrate con tu correo universitario
+                </button>
+            </div>
+        </section>
+
+        <!-- sección de promociones -->
+        <section class="promotions">
+            <div class="section-header">
+                <h2><i class="fas fa-percentage"></i> Promociones Especiales</h2>
+                <p>Descuentos y ofertas exclusivas de los restaurantes del campus</p>
+            </div>
+            
+            <div class="promotions-grid">
+                <!-- Promoción 1 -->
+                <div class="promotion-card">
+                    <div class="promotion-badge">20% OFF</div>
+                    <div class="promotion-img" style="background-image: url('../assets/promociones/promosrgourmet.jpg');"></div>
+                    <div class="promotion-content">
+                        <h3>Combo Estudiante</h3>
+                        <p class="restaurant-name"><i class="fas fa-utensils"></i> Sr.Gourmet</p>
+                        <p class="promo-desc">Almuerzo completo + bebida por solo $12.000</p>
+                        <div class="promo-meta">
+                            <span class="promo-date"><i class="far fa-calendar-alt"></i> Válido hasta: 30/04/2025</span>
+                            <span class="promo-time"><i class="far fa-clock"></i> 11:30 - 15:00</span>
+                        </div>
+                        <button class="promo-button">Ver Detalles</button>
+                    </div>
+                </div>
+                
+                <!-- Promoción 2 -->
+                <div class="promotion-card">
+                    <div class="promotion-badge">2x1</div>
+                    <div class="promotion-img" style="background-image: url('../assets/promociones/promodogger.jpg');"></div>
+                    <div class="promotion-content">
+                        <h3>Hot Dogs</h3>
+                        <p class="restaurant-name"><i class="fas fa-utensils"></i> Dogger</p>
+                        <p class="promo-desc">Lleva 2 hot dogs especiales al precio de 1</p>
+                        <div class="promo-meta">
+                            <span class="promo-date"><i class="far fa-calendar-alt"></i> Válido hasta: 15/04/2025</span>
+                            <span class="promo-time"><i class="far fa-clock"></i> Todo el día</span>
+                        </div>
+                        <button class="promo-button">Ver Detalles</button>
+                    </div>
+                </div>
+                
+                <!-- Promoción 3 -->
+                <div class="promotion-card">
+                    <div class="promotion-badge">MENÚ $10K</div>
+                    <div class="promotion-img" style="background-image: url('../assets/promociones/promopapalitas.jpg');"></div>
+                    <div class="promotion-content">
+                        <h3>Promo Nocturna</h3>
+                        <p class="restaurant-name"><i class="fas fa-utensils"></i> Papaalitas</p>
+                        <p class="promo-desc">Hamburguesa + papas + gaseosa por $10.000</p>
+                        <div class="promo-meta">
+                            <span class="promo-date"><i class="far fa-calendar-alt"></i> Válido hasta: 20/04/2025</span>
+                            <span class="promo-time"><i class="far fa-clock"></i> 16:00 - 18:00</span>
+                        </div>
+                        <button class="promo-button">Ver Detalles</button>
+                    </div>
+                </div>
             </div>
         </section>
 

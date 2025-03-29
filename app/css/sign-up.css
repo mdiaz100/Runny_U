@@ -39,7 +39,7 @@ body {
 
 .auth-image {
     flex: 1;
-    background: linear-gradient(rgba(94, 1, 1, 0.7), rgba(130, 3, 3, 0.7)), 
+    background: linear-gradient(rgba(94, 1, 1, 0.749), rgba(130, 3, 3, 0.782)), 
                 url('../assets/campus2.jpeg') center/cover;
     display: flex;
     align-items: center;
