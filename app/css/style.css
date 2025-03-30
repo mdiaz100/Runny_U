@@ -489,3 +489,26 @@ footer {
     margin-right: 8px;
     font-size: 0.9em;
 }
+
+/* boton para ver menú */
+.view-menu {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 0.8rem;
+    transition: all 0.3s;
+}
+
+.view-menu:hover {
+    background-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(193, 18, 31, 0.3);
+}
+
+.view-menu i {
+    margin-right: 0.5rem;
+}
