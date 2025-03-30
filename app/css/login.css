@@ -38,7 +38,7 @@ body {
 .auth-image {
     flex: 1;
     background: linear-gradient(rgba(94, 1, 1, 0.749), rgba(130, 3, 3, 0.782)), 
-                url('../assets/campus2.jpeg') center/cover;
+                url('../assets/logos/campus2.jpeg') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,15 +101,9 @@ body {
 }
 
 
-.password-container {
-    width: 100%;
-    max-width: 400px; 
-    margin: 0 auto;
-}
-
-.password-input input {
-    width: 100% !important;
-    min-width: 300px; 
+/* Password toggle*/
+.password-input {
+    position: relative;
 }
 
 .toggle-password {
@@ -123,10 +117,24 @@ body {
     cursor: pointer;
 }
 
+
 .error-message {
     color: var(--accent);
     font-size: 0.9rem;
     height: 1rem;
+    font-weight: 500;
+}
+
+.password-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Campos de la contraseña*/
+.password-input input {
+    width: 100% !important;
+    min-width: 300px; 
 }
 
 .options-group {
