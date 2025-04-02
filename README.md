@@ -37,6 +37,23 @@ Al acceder al menú de un restaurante, se despliega una lista con los platillos 
 
 ![image](https://github.com/user-attachments/assets/5399969a-06e8-4ebd-a80e-889e766f61ff)
 
+## Motor búsqueda
+
+La búsqueda está ubicada en la págia principal. Esto ayudará a buscar los restaurantes disponibles.
+
+![image](https://github.com/user-attachments/assets/ae9f2777-9547-42c1-b476-084fd14e3c7b)
+
+Si el restaurante que se quiere econtrar está aparecerá así:
+
+![image](https://github.com/user-attachments/assets/417768ad-42ee-4c58-be69-175a539f9929)
+
+Si el restaurante que se buscó y dicho restaurante no está disponible aparecerá así: 
+
+![image](https://github.com/user-attachments/assets/370da69b-5552-44a8-a24e-79aed70d2f97)
+
+
+
+
 
 
 
