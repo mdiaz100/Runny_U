@@ -1,0 +1,16 @@
+<div *ngIf="restaurant">
+    <h1>{{ restaurant.name }}</h1>
+    <p>{{ restaurant.description }}</p>
+    <img [src]="restaurant.image" alt="{{ restaurant.name }}">
+    <p><i class="fas fa-clock"></i> {{ restaurant.schedule }}</p>
+    <p><i class="fas fa-map-marker-alt"></i> {{ restaurant.location }}</p>
+  
+    <h2>Menú</h2>
+    <ul>
+      <li *ngFor="let item of restaurant.menu">
+        {{ item.name }} - ${{ item.price }} 
+        <img [src]="item.image" alt="{{ item.name }}">
+      </li>
+    </ul>
+  </div>
+  
