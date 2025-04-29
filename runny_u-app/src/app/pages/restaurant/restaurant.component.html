@@ -1,16 +1,31 @@
+<div>
+  <h1 (click)="router.navigate(['/cart'])" style="cursor: pointer;">Carrito 🛒: {{ totalCart }}</h1>
+</div>
+
 <div *ngIf="restaurant">
-    <h1>{{ restaurant.name }}</h1>
-    <p>{{ restaurant.description }}</p>
-    <img [src]="restaurant.image" alt="{{ restaurant.name }}">
-    <p><i class="fas fa-clock"></i> {{ restaurant.schedule }}</p>
-    <p><i class="fas fa-map-marker-alt"></i> {{ restaurant.location }}</p>
-  
-    <h2>Menú</h2>
+  <h1>{{ restaurant.name }}</h1>
+  <p>{{ restaurant.description }}</p>
+  <img [src]="restaurant.image" alt="{{ restaurant.name }}" width="300">
+  <p><i class="fas fa-clock"></i> {{ restaurant.schedule }}</p>
+  <p><i class="fas fa-map-marker-alt"></i> {{ restaurant.location }}</p>
+
+  <h2>Menú</h2>
+  <div *ngFor="let category of restaurant.menu">
+    <h3>{{ category.category }}</h3>
     <ul>
-      <li *ngFor="let item of restaurant.menu">
-        {{ item.name }} - ${{ item.price }} 
-        <img [src]="item.image" alt="{{ item.name }}">
+      <li *ngFor="let item of category.items">
+        <strong>{{ item.name }}</strong> - ${{ item.price }}<br>
+        <img
+            [src]="item.image"
+            alt="{{ item.name }}"
+            width="150"
+            (click)="onAddToCart(item)"
+            style="cursor: pointer;"
+            title="Haz clic para agregar al carrito"
+        />
       </li>
     </ul>
   </div>
+</div>
+
   

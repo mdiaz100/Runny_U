@@ -1,0 +1,24 @@
+.cart-container {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 400px;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
