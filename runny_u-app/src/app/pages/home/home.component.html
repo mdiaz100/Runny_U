@@ -64,7 +64,8 @@
             <h2>Restaurantes disponibles en el campus</h2>
             <div class="restaurant-grid">
                 <!-- tarjeta de restaurante -->
-                <div class="restaurant-card" *ngFor="let restaurant of restaurant" (click)="router.navigate([restaurant.link])">
+                <div class="restaurant-card" *ngFor="let restaurant of restaurant" (click)="router.navigate(['/restaurant', restaurant.id])"
+                >
                     <img class="restaurant-img" [src]="restaurant.image" alt="Logo de {{ restaurant.name }}">
                     <div class="restaurant-info">
                     <h3>{{ restaurant.name }}</h3>

@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Restaurant } from '../interfaces/restaurant.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestaurantService {
-  private restaurants = [
+  private restaurants: Restaurant[] = [
     {
       id: 'srgourmet',
       name: 'Sr.Gourmet',
@@ -24,19 +25,19 @@ export class RestaurantService {
       location: 'Bloque 4, Planta Baja (Boulevard de comidas)',
       image: '/assets/logos/dogger.jpg',
       menu: [
-        { name: 'Hot Dog clásico', price: 8000 },
-        { name: 'Salchipapa especial', price: 9000 },
+        { name: 'Hot Dog clásico', price: 8000, image: '/assets/menusdogger/hotdog.jpg' },
+        { name: 'Salchipapa especial', price: 9000, image: '/assets/menusdogger/salchipapa.jpg' },
       ],
       description: 'Perros calientes y snacks con estilo callejero.'
     },
     // Agrega más restaurantes...
   ];
 
-  getRestaurantes() {
+  getRestaurants() {
     return this.restaurants;
   }
 
-  getRestauranteById(id: string) {
+  getRestaurantById(id: string) {
     return this.restaurants.find(r => r.id === id);
   }
 }
