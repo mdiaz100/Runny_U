@@ -5,11 +5,30 @@
             <h1>Runny <span>U</span></h1>
         </div>
         <div class="search-container">
-            <form id="search-form">
-                <input type="text" id="search-input" placeholder="Buscar restaurante...">
-                <button type="submit"><i class="fas fa-search"></i></button>
+            <form id="search-form" (submit)="onSearch($event)">
+              <input type="text" id="search-input" [(ngModel)]="searchTerm" name="search" placeholder="Buscar restaurante..." />
+              <button type="submit"><i class="fas fa-search"></i></button>
             </form>
+          </div>
+        <!-- MODAL DE RESULTADOS DE BÚSQUEDA -->
+<div class="modal" *ngIf="showSearchResults">
+    <div class="modal-content">
+      <span class="close" (click)="closeSearchResults()">&times;</span>
+      <h2>Resultados de búsqueda</h2>
+      <div *ngIf="filteredRestaurants.length > 0; else noResults">
+        <div *ngFor="let rest of filteredRestaurants" class="restaurant-card" (click)="router.navigate(['/restaurant', rest.id])">
+          <h3>{{ rest.name }}</h3>
+          <img [src]="rest.image" alt="{{ rest.name }}" width="150" />
+          <p>{{ rest.description }}</p>
         </div>
+      </div>
+      <ng-template #noResults>
+        <p>No se encontraron restaurantes.</p>
+      </ng-template>
+    </div>
+  </div>
+  
+         
         <nav>
             <ul class="menu-header">
                 <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
