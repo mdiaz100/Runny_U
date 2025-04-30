@@ -1,0 +1,29 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="input-group">
+      <label for="fullname">Nombre completo</label>
+      <input formControlName="fullname" type="text" placeholder="Ej: María González" />
+    </div>
+  
+    <div class="input-group">
+      <label for="email">Correo electrónico</label>
+      <input formControlName="email" type="email" placeholder="tucorreo@soyudemedellin.edu.co" />
+    </div>
+  
+    <div class="input-group">
+      <label for="password">Contraseña</label>
+      <input formControlName="password" type="password" />
+    </div>
+  
+    <div class="input-group">
+      <label for="confirmPassword">Confirmar contraseña</label>
+      <input formControlName="confirmPassword" type="password" />
+    </div>
+  
+    <label>
+      <input type="checkbox" formControlName="terms" />
+      Acepto los términos y condiciones
+    </label>
+  
+    <button type="submit" [disabled]="signupForm.invalid" (click)="onSubmit()">Registrarse</button>
+  </form>
+  
