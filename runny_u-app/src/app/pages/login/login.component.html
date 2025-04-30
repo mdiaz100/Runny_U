@@ -1,4 +1,4 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="loginForm">
     <div class="input-group">
       <label for="email">Correo</label>
       <input type="email" formControlName="email" required>
@@ -9,6 +9,6 @@
       <input type="password" formControlName="password" required>
     </div>
   
-    <button type="submit">Iniciar sesión</button>
+    <button type="submit" (click)="onSubmit()"  (click)="router.navigate(['/'])">Iniciar sesión</button>
   </form>
   

@@ -5,6 +5,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { Restaurant } from '../../shared/interfaces/restaurant.interface';
 import { CartService } from '../../shared/services/cart.service';
 import { CartItem } from '../../shared/interfaces/cart-item.interface';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-restaurante',
@@ -20,6 +21,8 @@ export class RestaurantComponent implements OnInit {
   restaurant: Restaurant | undefined;
   cartItems: CartItem[] | undefined;
   totalCart: number | undefined;
+  authService = inject(AuthService);
+  isLoggedIn: boolean = false;
   
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -29,10 +32,15 @@ export class RestaurantComponent implements OnInit {
   }
 
   onAddToCart(item: { name: string; price: number; image: string }) {
-    this.cartService.addItem({ ...item, quantity: 1 });
-    console.log(`${item.name} añadido al carrito`);
-    console.log(this.cartService.getItems());
-    console.log(`Total: ${this.cartService.getTotal()}`);
-    this.totalCart = this.cartService.getTotalItems();
+    if (this.authService.isLoggedIn()) {
+      this.cartService.addItem({ ...item, quantity: 1 });
+      console.log(`${item.name} añadido al carrito`);
+      console.log(this.cartService.getItems());
+      console.log(`Total: ${this.cartService.getTotal()}`);
+      this.totalCart = this.cartService.getTotalItems();
+    } else {
+      alert('Inicia sesión para añadir al carrito');
+      this.router.navigate(['/login']);
+    }
   }
 }

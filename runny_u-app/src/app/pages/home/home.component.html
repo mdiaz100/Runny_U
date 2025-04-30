@@ -1,98 +1,103 @@
 <body>
     <header>
-        <div class="logo">
-            <img src="/assets/logos/logorunny.png" alt="Logo Runny U">
-            <h1>Runny <span>U</span></h1>
-        </div>
-        <div class="search-container">
-            <form id="search-form" (submit)="onSearch($event)">
-              <input type="text" id="search-input" [(ngModel)]="searchTerm" name="search" placeholder="Buscar restaurante..." />
-              <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
+      <div class="logo">
+        <img src="/assets/logos/logorunny.png" alt="Logo Runny U">
+        <h1>Runny <span>U</span></h1>
+      </div>
+      <div class="search-container">
+        <form id="search-form" (submit)="onSearch($event)">
+          <input type="text" id="search-input" [(ngModel)]="searchTerm" name="search" placeholder="Buscar restaurante..." />
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+  
+      <!-- MODAL DE RESULTADOS DE BÚSQUEDA -->
+      <div class="modal" *ngIf="showSearchResults">
+        <div class="modal-content">
+          <span class="close" (click)="closeSearchResults()">&times;</span>
+          <h2>Resultados de búsqueda</h2>
+          <div *ngIf="filteredRestaurants.length > 0; else noResults">
+            <div *ngFor="let rest of filteredRestaurants" class="restaurant-card" (click)="router.navigate(['/restaurant', rest.id])">
+              <h3>{{ rest.name }}</h3>
+              <img [src]="rest.image" alt="{{ rest.name }}" width="150" />
+              <p>{{ rest.description }}</p>
+            </div>
           </div>
-        <!-- MODAL DE RESULTADOS DE BÚSQUEDA -->
-<div class="modal" *ngIf="showSearchResults">
-    <div class="modal-content">
-      <span class="close" (click)="closeSearchResults()">&times;</span>
-      <h2>Resultados de búsqueda</h2>
-      <div *ngIf="filteredRestaurants.length > 0; else noResults">
-        <div *ngFor="let rest of filteredRestaurants" class="restaurant-card" (click)="router.navigate(['/restaurant', rest.id])">
-          <h3>{{ rest.name }}</h3>
-          <img [src]="rest.image" alt="{{ rest.name }}" width="150" />
-          <p>{{ rest.description }}</p>
+          <ng-template #noResults>
+            <p>No se encontraron restaurantes.</p>
+          </ng-template>
         </div>
       </div>
-      <ng-template #noResults>
-        <p>No se encontraron restaurantes.</p>
-      </ng-template>
-    </div>
-  </div>
   
-         
-        <nav>
-            <ul class="menu-header">
-                <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
-                <li><a href="sign-up.html"><i class="fas fa-user-plus"></i> Registrarse</a></li>
-                <li><a href="#restaurants"><i class="fas fa-utensils"></i> Restaurantes</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul class="menu-header">
+          <ng-container *ngIf="isLoggedIn; else guestMenu">
+            <li><a href="#"><i class="fas fa-user"></i> {{ user?.fullname }}</a></li>
+            <li><a href="#" (click)="logout()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+            <li><a href="#restaurants"><i class="fas fa-utensils"></i> Restaurantes</a></li>
+          </ng-container>
+          <ng-template #guestMenu>
+            <li><a (click)="router.navigate(['/login'])"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
+            <li><a (click)="router.navigate(['/sign-up'])"><i class="fas fa-user-plus"></i> Registrarse</a></li>
+            <li><a href="#restaurants"><i class="fas fa-utensils"></i> Restaurantes</a></li>
+          </ng-template>
+        </ul>
+      </nav>
+      
     </header>
-
+  
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Evita las filas, disfruta tu comida</h2>
-                <p>Realiza pedidos anticipados en los restaurantes de tu universidad y recógelos cuando quieras</p>
-                <button onclick="window.location.href='sign-up.html'" class="cta-button">
-                    <i class="fas fa-user-plus"></i> Regístrate con tu correo universitario
-                </button>
+      <section class="hero" *ngIf="!isLoggedIn">
+        <div class="hero-content">
+          <h2>Evita las filas, disfruta tu comida</h2>
+          <p>Realiza pedidos anticipados en los restaurantes de tu universidad y recógelos cuando quieras</p>
+          <button (click)="router.navigate(['/sign-up'])" class="cta-button">
+            <i class="fas fa-user-plus"></i> Regístrate con tu correo universitario
+          </button>
+        </div>
+      </section>
+  
+      <!-- sección de promociones -->
+      <section class="promotions">
+        <div class="section-header">
+          <h2><i class="fas fa-percentage"></i> Promociones Especiales</h2>
+          <p>Descuentos y ofertas exclusivas de los restaurantes del campus</p>
+        </div>
+  
+        <div class="promotions-grid">
+          <div class="promotion-card" *ngFor="let promo of promotions">
+            <div class="promotion-badge">{{ promo.badge }}</div>
+            <img class="promotion-img" [src]="promo.image" alt="Promo de {{ promo.restaurant }}">
+            <div class="promotion-content"></div>
+            <h3>{{ promo.title }}</h3>
+            <p class="restaurant-name"><i class="fas fa-utensils"></i>{{ promo.restaurant }}</p>
+            <p class="promo-desc">{{ promo.description }}</p>
+            <div class="promo-meta">
+              <span class="promo-date"><i class="far fa-calendar-alt"></i> Válido hasta: {{ promo.date }}</span>
+              <span class="promo-time"><i class="far fa-clock"></i> {{ promo.time }}</span>
             </div>
-        </section>
-
-        <!-- sección de promociones -->
-        <section class="promotions">
-            <div class="section-header">
-                <h2><i class="fas fa-percentage"></i> Promociones Especiales</h2>
-                <p>Descuentos y ofertas exclusivas de los restaurantes del campus</p>
+          </div>
+        </div>
+      </section>
+  
+      <section id="search-results" class="search-results" style="display: none;">
+        <h2>Resultados de búsqueda</h2>
+        <div class="results-grid"></div>
+      </section>
+  
+      <section id="restaurants" class="restaurants">
+        <h2>Restaurantes disponibles en el campus</h2>
+        <div class="restaurant-grid">
+          <div class="restaurant-card" *ngFor="let restaurant of restaurant" (click)="router.navigate(['/restaurant', restaurant.id])">
+            <img class="restaurant-img" [src]="restaurant.image" alt="Logo de {{ restaurant.name }}">
+            <div class="restaurant-info">
+              <h3>{{ restaurant.name }}</h3>
+              <p><i class="fas fa-clock"></i>{{ restaurant.schedule }}</p>
+              <p><i class="fas fa-walking"></i>{{ restaurant.location }}</p>
             </div>
-            
-            <div class="promotions-grid">
-                <!-- Promoción 1 -->
-                <div class="promotion-card" *ngFor="let promo of promotions">
-                    <div class="promotion-badge">{{ promo.badge }}</div>
-                    <img class="promotion-img" [src]="promo.image" alt="Promo de {{ promo.restaurant }}">
-                    <div class="promotion-content"></div>
-                    <h3>{{ promo.title }}</h3>
-                    <p class="restaurant-name"><i class="fas fa-utensils"></i>{{ promo.restaurant }}</p>
-                    <p class="promo-desc">{{ promo.description }}</p>
-                    <div class="promo-meta">
-                        <span class="promo-date"><i class="far fa-calendar-alt"></i> Válido hasta: {{ promo.date }}</span>
-                        <span class="promo-time"><i class="far fa-clock"></i> {{ promo.time }}</span>
-                    </div>
-                    </div>
-                </div>      
-            
-        </section>
-
-        <section id="search-results" class="search-results" style="display: none;">
-            <h2>Resultados de búsqueda</h2>
-            <div class="results-grid"></div>
-        </section>
-
-        <section id="restaurants" class="restaurants">
-            <h2>Restaurantes disponibles en el campus</h2>
-            <div class="restaurant-grid">
-                <!-- tarjeta de restaurante -->
-                <div class="restaurant-card" *ngFor="let restaurant of restaurant" (click)="router.navigate(['/restaurant', restaurant.id])"
-                >
-                    <img class="restaurant-img" [src]="restaurant.image" alt="Logo de {{ restaurant.name }}">
-                    <div class="restaurant-info">
-                    <h3>{{ restaurant.name }}</h3>
-                    <p><i class="fas fa-clock"></i>{{ restaurant.schedule }}</p>
-                    <p><i class="fas fa-walking"></i>{{ restaurant.location }}</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </main>
-</body>
+  </body>
+  

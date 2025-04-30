@@ -14,7 +14,7 @@ export class SignUpComponent {
   
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
-  private router = inject(Router);
+  router = inject(Router);
 
 
   signupForm = this.fb.group({

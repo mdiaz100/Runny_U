@@ -24,6 +24,6 @@
       Acepto los términos y condiciones
     </label>
   
-    <button type="submit" [disabled]="signupForm.invalid" (click)="onSubmit()">Registrarse</button>
+    <button type="submit" [disabled]="signupForm.invalid" (click)="onSubmit()" (click)="router.navigate(['/login'])">Registrarse</button>
   </form>
   
