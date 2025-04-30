@@ -30,6 +30,6 @@
         <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
       </div>
 
-      <button type="submit" class="auth-button">Iniciar sesión</button>
+      <button type="submit" (click)="onSubmit()" (click)="router.navigate(['/'])" class="auth-button">Iniciar sesión</button>
     </form>
   

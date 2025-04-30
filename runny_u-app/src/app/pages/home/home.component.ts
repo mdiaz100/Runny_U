@@ -6,8 +6,9 @@ import { Restaurant } from '../../shared/interfaces/restaurant.interface';
 import { Promotion } from '../../shared/interfaces/promotions.interface';
 import { PromotionService } from '../../shared/services/promotion.service';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from '../../shared/services/auth.service'; // importa AuthService
+import { AuthService } from '../../shared/services/auth.service';
 import { User } from '../../shared/interfaces/user.interface';
+import { CartService } from '../../shared/services/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -25,12 +26,13 @@ export class HomeComponent implements OnInit {
   showSearchResults: boolean = false;
 
   isLoggedIn: boolean = false;
-  user: User | null = null; // para mostrar el nombre
+  user: User | null = null; 
 
   router = inject(Router);
   restaurantService = inject(RestaurantService);
   promotionService = inject(PromotionService);
   authService = inject(AuthService);
+  cartService = inject(CartService);
 
   ngOnInit(): void {
     this.restaurant = this.restaurantService.getRestaurants();
@@ -60,6 +62,7 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/']);
     this.isLoggedIn = false;
     this.user = null;
+    this.cartService.clearCart();
   }
 }
 
