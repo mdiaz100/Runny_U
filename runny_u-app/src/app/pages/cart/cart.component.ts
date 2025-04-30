@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CartItem } from '../../shared/interfaces/cart-item.interface';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../../shared/services/cart.service';
 import { NgFor, NgIf } from '@angular/common';
 
 @Component({

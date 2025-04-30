@@ -1,9 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RestaurantService } from '../../services/restaurant.service';
+import { RestaurantService } from '../../shared/services/restaurant.service';
 import { NgFor, NgIf } from '@angular/common';
 import { Restaurant } from '../../shared/interfaces/restaurant.interface';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../../shared/services/cart.service';
 import { CartItem } from '../../shared/interfaces/cart-item.interface';
 
 @Component({

@@ -1,10 +1,10 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { RestaurantService } from '../../services/restaurant.service';
+import { RestaurantService } from '../../shared/services/restaurant.service';
 import { Restaurant } from '../../shared/interfaces/restaurant.interface';
 import { Promotion } from '../../shared/interfaces/promotions.interface';
-import { PromotionService } from '../../services/promotion.service';
+import { PromotionService } from '../../shared/services/promotion.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({

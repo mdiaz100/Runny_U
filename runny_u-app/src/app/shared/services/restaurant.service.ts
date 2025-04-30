@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Restaurant } from '../shared/interfaces/restaurant.interface';
+import { Restaurant } from '../interfaces/restaurant.interface';
 
 @Injectable({
   providedIn: 'root'
