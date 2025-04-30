@@ -1,29 +1,75 @@
-<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-    <div class="input-group">
-      <label for="fullname">Nombre completo</label>
-      <input formControlName="fullname" type="text" placeholder="Ej: María González" />
+<div class="auth-container">
+  <!-- Imagen lateral opcional -->
+  <div class="auth-image">
+    <h1>LOGO</h1>
+  </div>
+
+  <div class="auth-card">
+    <div class="auth-header">
+      <img src="assets/logos/udemedellin.png" alt="Logo" class="auth-logo" />
+      <h1>Regístrate en <span>Runny U</span></h1>
+      <p>Crea tu cuenta con tu correo institucional</p>
     </div>
-  
-    <div class="input-group">
-      <label for="email">Correo electrónico</label>
-      <input formControlName="email" type="email" placeholder="tucorreo@soyudemedellin.edu.co" />
+
+    <!-- FORMULARIO DE REGISTRO -->
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="auth-form">
+      <!-- Campos del formulario aquí... -->
+
+      <div class="input-group">
+        <label for="fullname">Nombre completo</label>
+        <input formControlName="fullname" type="text" placeholder="Ej: María González" />
+      </div>
+
+      <div class="input-group">
+        <label for="email">Correo electrónico</label>
+        <input formControlName="email" type="email" placeholder="tucorreo@soyudemedellin.edu.co" />
+      </div>
+
+      <div class="input-group password-input">
+        <label for="password">Contraseña</label>
+        <input
+          formControlName="password"
+          type="password"
+          placeholder="Crea una contraseña segura"
+        />
+        <div class="password-hint">
+          Mínimo 8 caracteres, incluye números y letras
+        </div>
+      </div>
+      
+
+      <div class="input-group password-input">
+        <label for="confirmPassword">Confirmar contraseña</label>
+        <input formControlName="confirmPassword" type="password" />
+      </div>
+
+      <div class="confirm-checkbox">
+        <input type="checkbox" formControlName="terms" />
+        <label>Acepto los términos y condiciones</label>
+      </div>
+
+      <button type="submit" [disabled]="signupForm.invalid" class="auth-button">
+        Crear Cuenta
+      </button>
+    </form>
+
+    <!-- Footer del formulario -->
+    <div class="auth-footer">
+      ¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a>
     </div>
-  
-    <div class="input-group">
-      <label for="password">Contraseña</label>
-      <input formControlName="password" type="password" />
+
+    <!-- Botón de regreso -->
+    <div class="back-button-container">
+      <button class="back-button" type="button" (click)="router.navigate(['/'])"> 
+        <i class="fas fa-arrow-left"></i> Regresar al inicio
+      </button>
     </div>
-  
-    <div class="input-group">
-      <label for="confirmPassword">Confirmar contraseña</label>
-      <input formControlName="confirmPassword" type="password" />
+
+    <!-- Mensaje de solo universidad -->
+    <div class="university-badge">
+      <i class="fas fa-university"></i>
+      <p>Solo para miembros de la universidad</p>
     </div>
-  
-    <label>
-      <input type="checkbox" formControlName="terms" />
-      Acepto los términos y condiciones
-    </label>
-  
-    <button type="submit" [disabled]="signupForm.invalid" (click)="onSubmit()" (click)="router.navigate(['/login'])">Registrarse</button>
-  </form>
+  </div>
+</div>
   
