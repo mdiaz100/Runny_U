@@ -10,4 +10,9 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 })
 export class AppComponent {
   title = 'runny_u-app';
+  router = inject(Router)
+  ocultarFooter(): boolean {
+    const rutasSinFooter = ['/login', '/sign-up', '/admin']; 
+    return rutasSinFooter.includes(this.router.url);
+  }
 }
