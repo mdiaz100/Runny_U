@@ -1,4 +1,5 @@
+<app-header *ngIf="!hideHeader()"></app-header>
 <main>
 <router-outlet />
 </main>
-<app-footer *ngIf="!ocultarFooter()"></app-footer>
+<app-footer *ngIf="!hideFooter()"></app-footer>

@@ -1,19 +1,19 @@
 <div class="auth-container">
-  <!-- Imagen lateral opcional -->
+  
   <div class="auth-image">
-    <h1>LOGO</h1>
+    <img src="assets/logos/logoudm.png" alt="Logo" class="auth-logo" />
   </div>
 
   <div class="auth-card">
     <div class="auth-header">
-      <img src="assets/logos/udemedellin.png" alt="Logo" class="auth-logo" />
+      <img src="assets/logos/logorunny.png" alt="Logo" class="auth-logo" />
       <h1>Regístrate en <span>Runny U</span></h1>
       <p>Crea tu cuenta con tu correo institucional</p>
     </div>
 
-    <!-- FORMULARIO DE REGISTRO -->
+    
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="auth-form">
-      <!-- Campos del formulario aquí... -->
+      
 
       <div class="input-group">
         <label for="fullname">Nombre completo</label>
@@ -48,24 +48,24 @@
         <label>Acepto los términos y condiciones</label>
       </div>
 
-      <button type="submit" [disabled]="signupForm.invalid" class="auth-button">
+      <button type="submit" class="auth-button">
         Crear Cuenta
       </button>
     </form>
 
-    <!-- Footer del formulario -->
+    
     <div class="auth-footer">
       ¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a>
     </div>
 
-    <!-- Botón de regreso -->
+    
     <div class="back-button-container">
       <button class="back-button" type="button" (click)="router.navigate(['/'])"> 
         <i class="fas fa-arrow-left"></i> Regresar al inicio
       </button>
     </div>
 
-    <!-- Mensaje de solo universidad -->
+    
     <div class="university-badge">
       <i class="fas fa-university"></i>
       <p>Solo para miembros de la universidad</p>

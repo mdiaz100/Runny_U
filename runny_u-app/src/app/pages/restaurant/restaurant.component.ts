@@ -20,7 +20,6 @@ export class RestaurantComponent implements OnInit {
   cartService = inject(CartService);
   restaurant: Restaurant | undefined;
   cartItems: CartItem[] | undefined;
-  totalCart: number | undefined;
   authService = inject(AuthService);
   isLoggedIn: boolean = false;
   
@@ -37,7 +36,6 @@ export class RestaurantComponent implements OnInit {
       console.log(`${item.name} añadido al carrito`);
       console.log(this.cartService.getItems());
       console.log(`Total: ${this.cartService.getTotal()}`);
-      this.totalCart = this.cartService.getTotalItems();
     } else {
       alert('Inicia sesión para añadir al carrito');
       this.router.navigate(['/login']);

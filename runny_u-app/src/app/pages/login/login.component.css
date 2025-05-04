@@ -47,6 +47,10 @@ body {
     color: white;
 }
 
+.auth-image img {
+    height: 400px;
+}
+
 /* Encabezado */
 .auth-header {
     text-align: center;

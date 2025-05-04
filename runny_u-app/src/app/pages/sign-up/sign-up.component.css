@@ -46,6 +46,11 @@ body {
     justify-content: center;
     color: white;
     display: none;
+    
+}
+
+.auth-image img {
+    height: 400px;
 }
 
 /* Header */

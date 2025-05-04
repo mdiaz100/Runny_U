@@ -1,0 +1,69 @@
+<header>
+    <div class="logo">
+      <img src="/assets/logos/logorunny.png" alt="Logo Runny U" (click)="router.navigate(['/'])">
+      <h1 (click)="router.navigate(['/'])">Runny <span (click)="router.navigate(['/'])">U</span></h1>
+    </div>
+    <div class="search-container" *ngIf="!isRestaurantDetailRoute">
+      <form id="search-form" (submit)="onSearch($event)">
+        <input type="text" id="search-input" [(ngModel)]="searchTerm" name="search" placeholder="Buscar restaurante..." />
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+    
+    <nav>
+        <ul class="menu-header">
+          <ng-container *ngIf="isLoggedIn; else guestMenu">
+            <li><a href="#" (click)="onOpenProfileModal()"><i class="fas fa-user"></i> {{ user?.fullname }}</a></li>
+            <li><a href="#" (click)="onLogout()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+            
+            
+            <li *ngIf="isRestaurantDetailRoute">
+              <a (click)="router.navigate(['/cart'])">
+                <i class="fas fa-shopping-cart"></i> Carrito ({{ totalItems }})
+              </a>
+            </li>
+      
+            <li *ngIf="!isRestaurantDetailRoute">
+              <a href="#restaurants"><i class="fas fa-utensils"></i> Restaurantes</a>
+            </li>
+          </ng-container>
+      
+          <ng-template #guestMenu>
+            <li><a (click)="router.navigate(['/login'])"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
+            <li><a (click)="router.navigate(['/sign-up'])"><i class="fas fa-user-plus"></i> Registrarse</a></li>
+            <li *ngIf="!isRestaurantDetailRoute">
+                <a href="#restaurants"><i class="fas fa-utensils"></i> Restaurantes</a>
+              </li>
+          </ng-template>
+        </ul>
+      </nav>
+      
+    
+  </header>
+
+  <div class="modalSearch" *ngIf="showSearchResults">
+    <div class="modal-content-search">
+      <span class="close-search" (click)="onCloseSearchResults()">&times;</span>
+      <h2>Resultados de búsqueda</h2>
+      <div *ngIf="filteredRestaurants.length > 0; else noResults">
+        <div *ngFor="let rest of filteredRestaurants" class="restaurant-card" (click)="router.navigate(['/restaurant', rest.id])">
+          <h3>{{ rest.name }}</h3>
+          <img [src]="rest.image" alt="{{ rest.name }}" width="150" />
+          <p>{{ rest.description }}</p>
+        </div>
+      </div>
+      <ng-template #noResults>
+        <p>No se encontraron restaurantes.</p>
+      </ng-template>
+    </div>
+  </div>
+
+  <div class="modalProfile" *ngIf="showProfileModal">
+    <div class="modal-content-profile">
+      <span class="close-profile" (click)="onCloseProfileModal()">&times;</span>
+      <h2>Perfil del Usuario</h2>
+      <p><strong>Nombre completo:</strong> {{ user?.fullname }}</p>
+      <p><strong>Correo electrónico:</strong> {{ user?.email }}</p>
+    </div>
+  </div>
+  

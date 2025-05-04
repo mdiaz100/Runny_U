@@ -16,7 +16,6 @@ export class SignUpComponent {
   private authService = inject(AuthService);
   router = inject(Router);
 
-
   signupForm = this.fb.group({
     fullname: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
@@ -25,14 +24,17 @@ export class SignUpComponent {
     terms: [false, Validators.requiredTrue]
   });
 
-
-
-
   onSubmit(): void {
     const fullname = this.signupForm.value.fullname ?? '';
-const email = this.signupForm.value.email ?? '';
-const password = this.signupForm.value.password ?? '';
-const confirmPassword = this.signupForm.value.confirmPassword ?? '';
+    const email = this.signupForm.value.email ?? '';
+    const password = this.signupForm.value.password ?? '';
+    const confirmPassword = this.signupForm.value.confirmPassword ?? '';
+    const terms = this.signupForm.value.terms ?? false;
+
+    if (this.isEmpty(fullname) || this.isEmpty(email) || this.isEmpty(password) || this.isEmpty(confirmPassword)) {
+      alert('Todos los campos son obligatorios');
+      return;
+    }
 
     if (!email?.endsWith('@soyudemedellin.edu.co')) {
       alert('El correo debe ser del dominio @soyudemedellin.edu.co');
@@ -49,11 +51,18 @@ const confirmPassword = this.signupForm.value.confirmPassword ?? '';
       return;
     }
 
-    
+    if (!terms) {
+      alert('Debes aceptar los términos y condiciones');
+      return;
+    }
 
     this.authService.addUser({ fullname, email, password });
     alert('Registro exitoso');
     this.router.navigate(['/login']);
+  }
+
+  isEmpty(value: string): boolean {
+    return value.trim().length === 0;
   }
 }
 

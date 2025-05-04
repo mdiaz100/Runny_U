@@ -2,18 +2,23 @@ import { Component, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { NgIf } from '@angular/common';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FooterComponent, NgIf],
+  imports: [RouterOutlet, FooterComponent,HeaderComponent, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'runny_u-app';
   router = inject(Router)
-  ocultarFooter(): boolean {
-    const rutasSinFooter = ['/login', '/sign-up', '/admin']; 
-    return rutasSinFooter.includes(this.router.url);
+  hideFooter(): boolean {
+    const routesWithoutFooter = ['/login', '/sign-up']; 
+    return routesWithoutFooter.includes(this.router.url);
+  }
+  hideHeader(): boolean {
+    const routesWithoutHeader = ['/login', '/sign-up']; 
+    return routesWithoutHeader.includes(this.router.url);
   }
 }
