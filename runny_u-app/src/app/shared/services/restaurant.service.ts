@@ -20,17 +20,20 @@ export class RestaurantService {
             {
               name: 'Bandeja paisa',
               price: 12000,
-              image: '/assets/menusrgourmet/almuerzos/bandejapaisa.jpg'
+              image: '/assets/menusrgourmet/almuerzos/bandejapaisa.jpg',
+              description: 'Arroz, frijoles, carne molida, chicharrón, huevo frito, plátano maduro, arepa y aguacate.'
             },
             {
               name: 'Ensalada César',
               price: 10000,
-              image: '/assets/menusrgourmet/almuerzos/ensaladacesar.jpg'
+              image: '/assets/menusrgourmet/almuerzos/ensaladacesar.jpg',
+              description: 'Lechuga romana, croutones, queso parmesano, aderezo César y pollo a la parrilla.'
             },
             {
               name: 'Pasta alfredo',
               price: 8000,
-              image: '/assets/menusrgourmet/almuerzos/pastaalfredo.jpg'
+              image: '/assets/menusrgourmet/almuerzos/pastaalfredo.jpg',
+              description: 'Pasta en salsa cremosa de queso parmesano, mantequilla y ajo, con trozos de pollo.'
             }
           ]
         },
@@ -40,12 +43,14 @@ export class RestaurantService {
             {
               name: 'Jugos Naturales',
               price: 12000,
-              image: '/assets/menusrgourmet/bebidas/jugosnaturales.jpg'
+              image: '/assets/menusrgourmet/bebidas/jugosnaturales.jpg',
+              description: 'Variedad de jugos frescos de temporada: mango, maracuyá, guayaba o lulo.'
             },
             {
               name: 'Limonada',
               price: 10000,
-              image: '/assets/menusrgourmet/bebidas/limonada.jpg'
+              image: '/assets/menusrgourmet/bebidas/limonada.jpg',
+              description: 'Limonada natural con hierbabuena, endulzada al gusto.'
             }
           ]
         }
@@ -65,17 +70,20 @@ export class RestaurantService {
             {
               name: 'Perro Callejero',
               price: 8000,
-              image: '/assets/menudogger/perros/perrocallejero.jpg'
+              image: '/assets/menudogger/perros/perrocallejero.jpg',
+              description: 'Salchicha, cebolla picada, salsa de piña, queso rallado y papas chips trituradas.'
             },
             {
               name: 'Perro de la Esquina',
               price: 9000,
-              image: '/assets/menudogger/perros/perrodelaesquina.jpg'
+              image: '/assets/menudogger/perros/perrodelaesquina.jpg',
+              description: 'Salchicha con tocineta, ensalada de repollo, salsa rosada y queso fundido.'
             },
             {
               name: 'Perro Super',
               price: 10000,
-              image: '/assets/menudogger/perros/perrosuper.jpg'
+              image: '/assets/menudogger/perros/perrosuper.jpg',
+              description: 'Doble salchicha, ripio de papa, maíz dulce, salsa de ajo y mostaza.'
             }
           ]
         },
@@ -85,19 +93,20 @@ export class RestaurantService {
             {
               name: 'Agua',
               price: 12000,
-              image: '/assets/menudogger/bebidas/botelladeagua.jpg'
+              image: '/assets/menudogger/bebidas/botelladeagua.jpg',
+              description: 'Botella de agua mineral 500ml.'
             },
             {
               name: 'Coca-cola',
               price: 10000,
-              image: '/assets/menudogger/bebidas/gaseosa-coca-cola-400-ml.jpg'
+              image: '/assets/menudogger/bebidas/gaseosa-coca-cola-400-ml.jpg',
+              description: 'Gaseosa Coca-Cola 400ml bien fría.'
             }
           ]
         }
       ]
     },
-
-     {
+    {
       id: 'nativos',
       name: 'Nativos',
       schedule: 'Abierto 8:00-19:00',
@@ -111,12 +120,14 @@ export class RestaurantService {
             {
               name: 'Ensalada de frutas',
               price: 12000,
-              image: '/assets/menunativos/carta/ensaladadefrutas.jpg'
+              image: '/assets/menunativos/carta/ensaladadefrutas.jpg',
+              description: 'Mezcla de frutas frescas de temporada con miel y granola.'
             },
             {
               name: 'Salchipapas',
               price: 14000,
-              image: '/assets/menunativos/carta/salchipapas.jpg'
+              image: '/assets/menunativos/carta/salchipapas.jpg',
+              description: 'Papas fritas crocantes con salchichas, salsas a elección y toppings.'
             }
           ]
         },
@@ -126,7 +137,8 @@ export class RestaurantService {
             {
               name: 'Limonada de Coco',
               price: 10000,
-              image: '/assets/menunativos/bebidas/limonadadecoco.jpg'
+              image: '/assets/menunativos/bebidas/limonadadecoco.jpg',
+              description: 'Refrescante limonada con leche de coco y hierbabuena.'
             }
           ]
         }
@@ -146,17 +158,20 @@ export class RestaurantService {
             {
               name: 'Pizza Hawaiana',
               price: 14000,
-              image: '/assets/menupimientoz/pizzas/phawaiana.jpg'
+              image: '/assets/menupimientoz/pizzas/phawaiana.jpg',
+              description: 'Base de tomate, jamón, piña y queso mozzarella gratinado.'
             },
             {
-              name: 'Pizza de Jamón y Queso ',
+              name: 'Pizza de Jamón y Queso',
               price: 14000,
-              image: '/assets/menupimientoz/pizzas/pjamonyqueso.jpg'
+              image: '/assets/menupimientoz/pizzas/pjamonyqueso.jpg',
+              description: 'Clásica pizza con salsa de tomate, jamón y doble queso mozzarella.'
             },
             {
               name: 'Pizza de Pollo BBQ',
               price: 16000,
-              image: '/assets/menupimientoz/pizzas/ppollobbq.jpg'
+              image: '/assets/menupimientoz/pizzas/ppollobbq.jpg',
+              description: 'Pollo desmechado en salsa BBQ, cebolla caramelizada y queso fundido.'
             }
           ]
         },
@@ -166,14 +181,14 @@ export class RestaurantService {
             {
               name: 'Dispensador de Gaseosas',
               price: 4000,
-              image: '/assets/menupimientoz/bebidas/dispensadorgaseosa.jpg'
-            },
+              image: '/assets/menupimientoz/bebidas/dispensadorgaseosa.jpg',
+              description: 'Vaso de gaseosa surtida (Coca-Cola, Sprite o Fanta) con hielo.'
+            }
           ]
         }
       ]
     }
-    
-  ];  
+];  
 
   getRestaurants() {
     return this.restaurants;

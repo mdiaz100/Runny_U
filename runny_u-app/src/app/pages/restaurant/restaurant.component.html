@@ -1,27 +1,44 @@
 <div *ngIf="restaurant">
-  <h1>{{ restaurant.name }}</h1>
-  <p>{{ restaurant.description }}</p>
-  <img [src]="restaurant.image" alt="{{ restaurant.name }}" width="300">
-  <p><i class="fas fa-clock"></i> {{ restaurant.schedule }}</p>
-  <p><i class="fas fa-map-marker-alt"></i> {{ restaurant.location }}</p>
-
-  <h2>Menú</h2>
-  <div *ngFor="let category of restaurant.menu">
-    <h3>{{ category.category }}</h3>
-    <ul>
-      <li *ngFor="let item of category.items">
-        <strong>{{ item.name }}</strong> - ${{ item.price }}<br>
-        <img
-            [src]="item.image"
-            alt="{{ item.name }}"
-            width="150"
-            (click)="onAddToCart(item)"
-            style="cursor: pointer;"
-            title="Haz clic para agregar al carrito"
-        />
-      </li>
-    </ul>
+  <div class="menu-header">
+    <div class="restaurant-info">
+      <img [src]="restaurant.image" [alt]="restaurant.name" class="restaurant-logo">
+      <div>
+        <h2>{{ restaurant.name }}</h2>
+        <p>
+          <i class="fas fa-clock"></i> Abierto {{ restaurant.schedule }} |
+          <i class="fas fa-walking"></i> {{ restaurant.location }}
+        </p>
+      </div>
+    </div>
   </div>
+
+<div class="menu-section">
+  <div class="restaurant-menu">
+    <div *ngFor="let category of restaurant.menu" class="menu-category">
+      <h2>{{ category.category }}</h2>
+      <div class="menu-items">
+        <article *ngFor="let item of category.items" class="menu-card">
+          <div class="card-image">
+            <img [src]="item.image" [alt]="item.name" loading="lazy">
+          </div>
+          <div class="card-content" >
+            <div class="card-header">
+              <h4 class="item-name">{{ item.name }}</h4>
+              <span class="item-price">${{ item.price }}</span>
+            </div>
+            <p class="item-description">{{ item.description }}</p>
+            <div class="card-footer">
+              <button class="add-btn" (click)="onAddToCart(item)">Añadir</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!restaurant" class="no-restaurant">
+  <p>Restaurante no encontrado.</p>
 </div>
 
   
