@@ -17,7 +17,7 @@ import { User } from '../../shared/interfaces/user.interface';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  restaurant: Restaurant[] = [];
+  restaurants: Restaurant[] = [];
   promotions: Promotion[] = [];
   isLoggedIn: boolean = false;
   user: User | null = null;
@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
   authService = inject(AuthService);
 
   ngOnInit(): void {
-    this.restaurant = this.restaurantService.getRestaurants();
+    this.restaurants = this.restaurantService.getRestaurants();
     this.promotions = this.promotionService.getPromotions();
     this.isLoggedIn = this.authService.isLoggedIn();
     this.user = this.authService.getLoggedInUser();

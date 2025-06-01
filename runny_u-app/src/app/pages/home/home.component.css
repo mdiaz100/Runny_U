@@ -1,286 +1,300 @@
+/* ========== VARIABLES GLOBALES ========== */
 :root {
-    --primary: #780000; 
-    --secondary: #ffab00; 
-    --accent: #c1121f; 
-    --light-bg: #f5f5f6;
-    --dark-text: #2c3e50;
-    --white: #ffffff;
+  --primary: #780000;
+  --secondary: #ffab00;
+  --accent: #c1121f;
+  --light-bg: #f5f5f6;
+  --dark-text: #2c3e50;
+  --white: #ffffff;
+  
+  /* Nuevas variables */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+  --transition: all 0.3s ease;
 }
 
+/* ========== RESET & BASE STYLES ========== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 body {
-    background-color: var(--light-bg);
-    color: var(--dark-text);
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+  line-height: 1.6;
 }
 
-/* Hero section universitaria */
+/* ========== HERO SECTION ========== */
 .hero {
-    text-align: center;
-    padding: 4rem 2rem;
-   
-    position: relative;
-    color: var(--white);
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--primary), #9e0000);
+  overflow: hidden;
 }
 
 .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #780000;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(120, 0, 0, 0.8), rgba(193, 18, 31, 0.8));
+  z-index: 0;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 2rem;
 }
 
-/* Tarjetas de restaurantes */
-.restaurants {
-    padding: 3rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.restaurants h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--primary);
-    font-size: 2.5rem;
-}
-
-.restaurant-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.restaurant-card {
-    background: var(--white);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.restaurant-card:hover {
-    transform: translateY(-5px);
-}
-
-.restaurant-img {
-    height: 180px;
-    background-size: cover;
-    background-position: center;
-}
-
-.restaurant-info {
-    padding: 1.5rem;
-}
-
-.restaurant-info h3 {
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-}
-
-.restaurant-info p {
-    margin-bottom: 1rem;
-    color: #666;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .restaurant-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
+/* ========== PROMOTIONS SECTION ========== */
 .promotions {
-    padding: 3rem 2rem;
-    background-color: #fff9f9;
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
+  padding: 3rem 2rem;
+  background-color: #fff9f9;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .section-header {
-    text-align: center;
-    margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .section-header h2 {
-    color: var(--primary);
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .section-header p {
-    color: #666;
-    font-size: 1.1rem;
+  color: #666;
+  font-size: 1.1rem;
 }
 
 .promotions-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .promotion-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    position: relative;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  position: relative;
 }
 
 .promotion-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
 .promotion-badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: var(--accent);
-    color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    z-index: 2;
-}
-
-.promotion-img {
-    height: 180px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.promotion-img::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--accent);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  z-index: 2;
 }
 
 .promotion-content {
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
 
 .promotion-content h3 {
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
 }
 
 .restaurant-name {
-    color: var(--secondary);
-    font-weight: 600;
-    margin-bottom: 0.8rem;
-    font-size: 0.9rem;
+  color: var(--secondary);
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .promo-desc {
-    color: #555;
-    margin-bottom: 1rem;
-    line-height: 1.4;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.4;
 }
 
 .promo-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1.2rem;
-    font-size: 0.8rem;
-    color: #777;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.8rem;
+  color: #777;
 }
 
-.promo-button {
-    width: 100%;
-    padding: 0.7rem;
-    background: linear-gradient(to right, var(--primary), var(--accent));
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
+/* ========== RESTAURANTS SECTION ========== */
+.restaurants {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.promo-button:hover {
-    background: linear-gradient(to right, var(--accent), var(--primary));
+.restaurants h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  font-size: 2rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .promotions {
-        padding: 2rem 1rem;
-    }
-    
-    .promotions-grid {
-        grid-template-columns: 1fr;
-    }
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
-/* Botón CTA principal */
+.restaurant-card {
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.restaurant-card:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  transform: scale(1.02) translateY(-5px);
+}
+
+.restaurant-info {
+  padding: 1.5rem;
+}
+
+.restaurant-info h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.restaurant-info p {
+  margin-bottom: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ========== IMAGE STYLES ========== */
+.restaurant-img,
+.promotion-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 16/9;
+  background: linear-gradient(45deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 200%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* ========== CTA BUTTON ========== */
 .cta-button {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--primary), #9e7100);
-    color: white;
-    padding: 12px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-top: 1.5rem;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgb(230, 207, 2);
-    transition: all 0.3s ease;
-    text-align: center;
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary), #9e7100);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(230, 207, 2, 0.3);
+  transition: var(--transition);
 }
 
 .cta-button:hover {
-    background: linear-gradient(135deg, #9e0000, #9e7c00);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(120, 0, 0, 0.4);
+  background: linear-gradient(135deg, #9e0000, #9e7c00);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(120, 0, 0, 0.4);
 }
 
 .cta-button:active {
-    transform: translateY(1px);
+  transform: translateY(1px);
 }
 
 .cta-button i {
-    margin-right: 8px;
-    font-size: 0.9em;
+  margin-right: 8px;
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 992px) {
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+  
+  .restaurants,
+  .promotions {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .restaurant-grid,
+  .promotions-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .cta-button {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+  
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+  
+  .restaurant-info,
+  .promotion-content {
+    padding: 1.2rem;
+  }
 }

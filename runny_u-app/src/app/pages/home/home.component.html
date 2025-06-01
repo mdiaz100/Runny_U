@@ -20,13 +20,14 @@
           <div class="promotion-card" *ngFor="let promo of promotions">
             <div class="promotion-badge">{{ promo.badge }}</div>
             <img class="promotion-img" [src]="promo.image" alt="Promo de {{ promo.restaurant }}">
-            <div class="promotion-content"></div>
-            <h3>{{ promo.title }}</h3>
-            <p class="restaurant-name"><i class="fas fa-utensils"></i>{{ promo.restaurant }}</p>
-            <p class="promo-desc">{{ promo.description }}</p>
-            <div class="promo-meta">
-              <span class="promo-date"><i class="far fa-calendar-alt"></i> Válido hasta: {{ promo.date }}</span>
-              <span class="promo-time"><i class="far fa-clock"></i> {{ promo.time }}</span>
+            <div class="promotion-content">
+              <h3>{{ promo.title }}</h3>
+              <p class="restaurant-name"><i class="fas fa-utensils"></i>{{ promo.restaurant }}</p>
+              <p class="promo-desc">{{ promo.description }}</p>
+              <div class="promo-meta">
+                <span class="promo-date"><i class="far fa-calendar-alt"></i> Válido hasta: {{ promo.date }}</span>
+                <span class="promo-time"><i class="far fa-clock"></i> {{ promo.time }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -40,7 +41,7 @@
       <section id="restaurants" class="restaurants">
         <h2>Restaurantes disponibles en el campus</h2>
         <div class="restaurant-grid">
-          <div class="restaurant-card" *ngFor="let restaurant of restaurant" (click)="router.navigate(['/restaurant', restaurant.id])">
+          <div class="restaurant-card" *ngFor="let restaurant of restaurants" (click)="router.navigate(['/restaurant', restaurant.id])">
             <img class="restaurant-img" [src]="restaurant.image" alt="Logo de {{ restaurant.name }}">
             <div class="restaurant-info">
               <h3>{{ restaurant.name }}</h3>
