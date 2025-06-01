@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../shared/services/auth.service';
+import Swal from 'sweetalert2'; // Importar SweetAlert2
 
 @Component({
   selector: 'app-login',
@@ -25,11 +26,21 @@ export class LoginComponent {
 
     const success = this.authService.login(email, password);
     if (success) {
-      alert('Inicio de sesión exitoso');
-      this.router.navigate(['/']); 
+      Swal.fire({
+        icon: 'success',
+        title: 'Inicio de sesión exitoso',
+        showConfirmButton: false,
+        timer: 1500
+      }).then(() => {
+        this.router.navigate(['/']);
+      });
     } else {
-      alert('Correo o contraseña incorrectos');
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Correo o contraseña incorrectos'
+      });
     }
   }
 }
-
+// This code defines a LoginComponent for an Angular application that handles user login.

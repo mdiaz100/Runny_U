@@ -2,16 +2,17 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../shared/services/auth.service';
-
+import Swal from 'sweetalert2'; // Importar SweetAlert2
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css'],
+  standalone: true,
   imports: [ReactiveFormsModule]
 })
 export class SignUpComponent {
-  
+
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
   router = inject(Router);
@@ -32,37 +33,65 @@ export class SignUpComponent {
     const terms = this.signupForm.value.terms ?? false;
 
     if (this.isEmpty(fullname) || this.isEmpty(email) || this.isEmpty(password) || this.isEmpty(confirmPassword)) {
-      alert('Todos los campos son obligatorios');
+      Swal.fire({
+        icon: 'warning',
+        title: 'Campos incompletos',
+        text: 'Todos los campos son obligatorios'
+      });
       return;
     }
 
-    if (!email?.endsWith('@soyudemedellin.edu.co')) {
-      alert('El correo debe ser del dominio @soyudemedellin.edu.co');
+    if (!email.endsWith('@soyudemedellin.edu.co')) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Correo inválido',
+        text: 'El correo debe ser del dominio @soyudemedellin.edu.co'
+      });
       return;
     }
 
     if (password !== confirmPassword) {
-      alert('Las contraseñas no coinciden');
+      Swal.fire({
+        icon: 'error',
+        title: 'Contraseñas no coinciden',
+        text: 'Verifica que ambas contraseñas sean iguales'
+      });
       return;
     }
 
     if (this.authService.isEmailRegistered(email)) {
-      alert('Este correo ya está registrado');
+      Swal.fire({
+        icon: 'error',
+        title: 'Correo ya registrado',
+        text: 'Este correo ya está en uso'
+      });
       return;
     }
 
     if (!terms) {
-      alert('Debes aceptar los términos y condiciones');
+      Swal.fire({
+        icon: 'info',
+        title: 'Términos y condiciones',
+        text: 'Debes aceptar los términos y condiciones'
+      });
       return;
     }
 
     this.authService.addUser({ fullname, email, password });
-    alert('Registro exitoso');
-    this.router.navigate(['/login']);
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Registro exitoso',
+      text: 'Tu cuenta ha sido creada correctamente',
+      timer: 2000,
+      showConfirmButton: false
+    }).then(() => {
+      this.router.navigate(['/login']);
+    });
   }
 
   isEmpty(value: string): boolean {
     return value.trim().length === 0;
   }
 }
-
+// This code defines a SignUpComponent for an Angular application that handles user registration.

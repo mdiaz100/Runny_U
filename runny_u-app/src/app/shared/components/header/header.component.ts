@@ -2,12 +2,13 @@ import { Component, OnInit, inject } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { NgIf, NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { count, filter } from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
 import { User } from '../../interfaces/user.interface';
 import { Restaurant } from '../../interfaces/restaurant.interface';
 import { AuthService } from '../../services/auth.service';
 import { RestaurantService } from '../../services/restaurant.service';
 import { CartService } from '../../services/cart.service';
+import Swal from 'sweetalert2'; // ✅ Importar SweetAlert2
 
 @Component({
   selector: 'app-header',
@@ -45,7 +46,7 @@ export class HeaderComponent implements OnInit {
     this.cartService.totalItems$.subscribe(count => {
       this.totalItems = count;
     });
-    
+
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
@@ -59,11 +60,19 @@ export class HeaderComponent implements OnInit {
 
   onLogout(): void {
     this.authService.logout();
-    alert('Sesión cerrada.');
-    this.router.navigate(['/']);
+    this.cartService.clearCart();
     this.isLoggedIn = false;
     this.user = null;
-    this.cartService.clearCart();
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Sesión cerrada',
+      text: 'Has cerrado sesión correctamente.',
+      timer: 1500,
+      showConfirmButton: false
+    }).then(() => {
+      this.router.navigate(['/']);
+    });
   }
 
   onOpenProfileModal(): void {
@@ -87,5 +96,4 @@ export class HeaderComponent implements OnInit {
     this.showSearchResults = false;
   }
 }
-
-
+// MELO
