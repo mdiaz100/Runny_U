@@ -4,13 +4,14 @@ import { RouterModule } from '@angular/router';
 import { CartItem } from '../../shared/interfaces/cart-item.interface';
 import { CartService } from '../../shared/services/cart.service';
 import { Subscription } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
   standalone: true,
-  imports: [CommonModule, RouterModule, CurrencyPipe],
+  imports: [CommonModule, RouterModule],
   providers: [CurrencyPipe]
 })
 export class CartComponent implements OnInit, OnDestroy {
@@ -60,17 +61,58 @@ export class CartComponent implements OnInit, OnDestroy {
     }
   }
 
-  onRemoveItem(item: CartItem): void {
-    if (confirm('¿Estás seguro de que quieres eliminar este producto del carrito?')) {
-      this.cartService.removeItem(item);
-    }
-  }
+onRemoveItem(item: CartItem): void {
+  Swal.fire({
+    title: '¿Estás seguro?',
+    text: '¿Quieres eliminar este producto del carrito?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#d33',
+    cancelButtonColor: ' #ffab00',
+    confirmButtonText: 'Sí, eliminar',
+    cancelButtonText: 'Cancelar'
 
-  onClearCart(): void {
-    if (this.items.length > 0 && confirm('¿Estás seguro de que quieres vaciar el carrito?')) {
-      this.cartService.clearCart();
+  }).then((result) => {
+    if (result.isConfirmed) {
+      this.cartService.removeItem(item);
+      Swal.fire({
+    title: 'Eliminado',
+    text: 'El producto fue eliminado del carrito.',
+    icon: 'success',
+    confirmButtonColor: '#4CAF50', // <- Cambia este color como desees
+    confirmButtonText: 'OK'
+  });
     }
-  }
+  });
+}
+
+onClearCart(): void {
+  if (this.items.length === 0) return;
+
+  Swal.fire({
+    title: '¿Vaciar carrito?',
+    text: '¿Estás seguro de que quieres vaciar el carrito?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#d33',
+    cancelButtonColor: ' #ffab00',
+    confirmButtonText: 'Sí, vaciar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      this.cartService.clearCart();
+      Swal.fire({
+    title: 'Eliminado',
+    text: 'El producto fue eliminado del carrito.',
+    icon: 'success',
+    confirmButtonColor: '#4CAF50', // <- Cambia este color como desees
+    confirmButtonText: 'OK'
+  });
+  ;
+    }
+  });
+}
+
 
   onCheckout(): void {
     if (this.items.length === 0) return;

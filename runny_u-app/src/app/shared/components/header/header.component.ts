@@ -68,11 +68,11 @@ export class HeaderComponent implements OnInit {
       icon: 'success',
       title: 'Sesión cerrada',
       text: 'Has cerrado sesión correctamente.',
-      timer: 1500,
-      showConfirmButton: false
-    }).then(() => {
-      this.router.navigate(['/']);
-    });
+      confirmButtonColor: '#ffab00', 
+      confirmButtonText: 'OK'
+    })
+    this.router.navigate(['/']);
+    
   }
 
   onOpenProfileModal(): void {

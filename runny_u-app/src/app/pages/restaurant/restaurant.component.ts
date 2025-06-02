@@ -6,6 +6,7 @@ import { Restaurant } from '../../shared/interfaces/restaurant.interface';
 import { CartService } from '../../shared/services/cart.service';
 import { CartItem } from '../../shared/interfaces/cart-item.interface';
 import { AuthService } from '../../shared/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-restaurante',
@@ -37,8 +38,14 @@ export class RestaurantComponent implements OnInit {
       console.log(this.cartService.getItems());
       console.log(`Total: ${this.cartService.getTotal()}`);
     } else {
-      alert('Inicia sesión para añadir al carrito');
-      this.router.navigate(['/login']);
+      Swal.fire({
+          title: 'Inicia sesión',
+          text: 'Debes iniciar sesión para añadir productos al carrito',
+          icon: 'info',
+          confirmButtonColor: '#ffab00', // <- Cambia este color como desees
+          confirmButtonText: 'OK'
+        });
+        this.router.navigate(['/login']);
     }
-  }
+}
 }

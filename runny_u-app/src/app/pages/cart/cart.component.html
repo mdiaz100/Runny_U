@@ -45,6 +45,7 @@
       <span>Total:</span>
       <strong>${{ onGetTotal() | number:'1.2-2' }}</strong>
     </div>
+    <button class="checkout-btn" (click)="onCheckout()">Guardar Carrito</button>
     <button class="checkout-btn" (click)="onCheckout()">Proceder al pago</button>
   </footer>
 </div>
@@ -57,7 +58,7 @@
     </svg>
     <h3>Tu carrito está vacío</h3>
     <p>Agrega algunos productos para comenzar</p>
-    <a routerLink="/products" class="browse-btn">Explorar productos</a>
+    <a href="#restaurants" class="browse-btn">Explorar productos</a>
   </div>
 </ng-template>  
   
