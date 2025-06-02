@@ -95,5 +95,13 @@ export class HeaderComponent implements OnInit {
   onCloseSearchResults(): void {
     this.showSearchResults = false;
   }
+
+  goToOrders(): void {
+  this.onCloseProfileModal();
+  this.router.navigate(['/orders']);
 }
-// MELO
+
+}
+
+
+
