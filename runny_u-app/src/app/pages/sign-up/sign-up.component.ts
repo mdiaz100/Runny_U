@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../shared/services/auth.service';
-import Swal from 'sweetalert2'; // Importar SweetAlert2
+import Swal from 'sweetalert2'; 
 
 @Component({
   selector: 'app-sign-up',
@@ -94,4 +94,4 @@ export class SignUpComponent {
     return value.trim().length === 0;
   }
 }
-// This code defines a SignUpComponent for an Angular application that handles user registration.
+// melito
