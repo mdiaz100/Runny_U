@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
   selector: 'app-restaurante',
   templateUrl: './restaurant.component.html',
   styleUrls: ['./restaurant.component.css'],
-  imports: [NgFor, NgIf]
+  imports: [NgFor, NgIf],
 })
 export class RestaurantComponent implements OnInit {
   route = inject(ActivatedRoute);
@@ -23,7 +23,7 @@ export class RestaurantComponent implements OnInit {
   cartItems: CartItem[] | undefined;
   authService = inject(AuthService);
   isLoggedIn: boolean = false;
-  
+
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
@@ -31,7 +31,12 @@ export class RestaurantComponent implements OnInit {
     }
   }
 
-  onAddToCart(item: { name: string; price: number; image: string }) {
+  onAddToCart(item: {
+    id: string;
+    name: string;
+    price: number;
+    image: string;
+  }) {
     if (this.authService.isLoggedIn()) {
       this.cartService.addItem({ ...item, quantity: 1 });
       console.log(`${item.name} añadido al carrito`);
@@ -39,13 +44,13 @@ export class RestaurantComponent implements OnInit {
       console.log(`Total: ${this.cartService.getTotal()}`);
     } else {
       Swal.fire({
-          title: 'Inicia sesión',
-          text: 'Debes iniciar sesión para añadir productos al carrito',
-          icon: 'info',
-          confirmButtonColor: '#ffab00', // <- Cambia este color como desees
-          confirmButtonText: 'OK'
-        });
-        this.router.navigate(['/login']);
+        title: 'Inicia sesión',
+        text: 'Debes iniciar sesión para añadir productos al carrito',
+        icon: 'info',
+        confirmButtonColor: '#ffab00',
+        confirmButtonText: 'OK',
+      });
+      this.router.navigate(['/login']);
     }
-}
+  }
 }

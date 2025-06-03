@@ -1,55 +1,57 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { User } from '../interfaces/user.interface';
-import { BehaviorSubject } from 'rxjs';
-
+import { JwtPayload } from '../interfaces/jwt-payload.interface';
+import { TokenService } from './token.service';
+import { TOKEN } from '../utils/constants';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-  private storageKey = 'users';
-  private sessionKey = 'loggedInUser';
-  private userSubject = new BehaviorSubject<User | null>(this.getLoggedInUser());
+  tokenService = inject(TokenService);
+  private userSubject = new BehaviorSubject<JwtPayload | null>(
+    this.tokenService.decodeToken()
+  );
   user$ = this.userSubject.asObservable();
 
+  private API_URL = 'http://localhost:3000/api/v1/auth';
 
-  getUsers(): User[] {
-    return JSON.parse(localStorage.getItem(this.storageKey) || '[]');
+  constructor(private http: HttpClient) {}
+
+  signUp(user: User): Observable<any> {
+    return this.http.post(`${this.API_URL}/sign-up`, user).pipe(
+      tap((res: any) => {
+        localStorage.setItem(TOKEN, res.token);
+        this.userSubject.next(this.tokenService.decodeToken());
+      })
+    );
   }
 
-  isEmailRegistered(email: string): boolean {
-    return this.getUsers().some(user => user.email === email);
+  login(email: string, password: string): Observable<any> {
+    return this.http.post(`${this.API_URL}/login`, { email, password }).pipe(
+      tap((res: any) => {
+        localStorage.setItem(TOKEN, res.token);
+        this.userSubject.next(this.tokenService.decodeToken());
+      })
+    );
   }
-
-  addUser(user: User): void {
-    const users = this.getUsers();
-    users.push(user);
-    localStorage.setItem(this.storageKey, JSON.stringify(users));
-  }
-
-  login(email: string, password: string): boolean {
-    const user = this.getUsers().find(u => u.email === email && u.password === password);
-    if (user) {
-      localStorage.setItem(this.sessionKey, JSON.stringify(user));
-      this.userSubject.next(user);  // <--- notifica que hay sesión
-      return true;
-    }
-    return false;
-  }  
 
   logout(): void {
-    localStorage.removeItem(this.sessionKey);
-    this.userSubject.next(null);  // <--- notifica que cerró sesión
-  }  
-
-  getLoggedInUser(): User | null {
-    const user = localStorage.getItem(this.sessionKey);
-    return user ? JSON.parse(user) : null;
+    this.tokenService.clearToken();
+    this.userSubject.next(null);
   }
 
   isLoggedIn(): boolean {
-    return !!this.getLoggedInUser();
+    return !this.tokenService.isTokenExpired();
+  }
+
+  getUser(): JwtPayload | null {
+    return this.tokenService.decodeToken();
+  }
+  getLoggedInUser(): User | null {
+    const user = this.getUser()?.fullname;
+    return user ? JSON.parse(user) : null;
   }
 }
-
-

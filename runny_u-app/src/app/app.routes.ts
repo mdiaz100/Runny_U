@@ -5,6 +5,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { NoAuthGuard } from './shared/guards/no-auth.guard';
 
 export const routes: Routes = [
     {
@@ -19,9 +20,11 @@ export const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {   path: 'sign-up',
-        component: SignUpComponent
+        component: SignUpComponent,
+        canActivate: [NoAuthGuard]
     },
     {   path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
+        canActivate: [NoAuthGuard]
     },
 ];

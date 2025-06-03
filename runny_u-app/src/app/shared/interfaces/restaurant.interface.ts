@@ -4,19 +4,19 @@ export interface Restaurant {
   schedule: string;
   location: string;
   image: string;
-  menu: Category[]; // Aquí debería ser un arreglo de categorías directamente
+  menu: Category[];
   description: string;
 }
 
 export interface Category {
-  category: string; // nombre de la categoría (por ejemplo: 'Almuerzos', 'Postres')
-  items: MenuItem[]; // lista de comidas dentro de la categoría
+  category: string;
+  items: MenuItem[];
 }
 
 export interface MenuItem {
+  id: string;
   name: string;
   price: number;
   image: string;
   description: string;
 }
-  

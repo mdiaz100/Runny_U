@@ -1,41 +1,86 @@
 <div class="cart-container" *ngIf="items.length > 0; else emptyCart">
   <header class="cart-header">
     <h2 class="cart-title">Carrito de compras</h2>
-    <button class="clear-cart-btn" (click)="onClearCart()" aria-label="Vaciar carrito">
+    <button
+      class="clear-cart-btn"
+      (click)="onClearCart()"
+      aria-label="Vaciar carrito"
+    >
       <span>Vaciar carrito</span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <polyline points="3 6 5 6 21 6"></polyline>
-        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+        <path
+          d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+        ></path>
       </svg>
     </button>
   </header>
 
   <ul class="cart-items-list">
     <li *ngFor="let item of items" class="cart-item">
-      <img [src]="item.image" [alt]="item.name" class="item-image" loading="lazy" />
+      <img
+        [src]="item.image"
+        [alt]="item.name"
+        class="item-image"
+        loading="lazy"
+      />
       <div class="item-details">
         <h3 class="item-name">{{ item.name }}</h3>
-        <p class="item-price">${{ item.price | number:'1.2-2' }}</p>
+        <p class="item-price">${{ item.price | number : "1.2-2" }}</p>
       </div>
-      
+
       <div class="item-controls">
-        <button (click)="onDecreaseQuantity(item)" class="control-btn" aria-label="Reducir cantidad">
+        <button
+          (click)="onDecreaseQuantity(item)"
+          class="control-btn"
+          aria-label="Reducir cantidad"
+        >
           <span>-</span>
         </button>
         <span class="item-quantity">{{ item.quantity }}</span>
-        <button (click)="onIncreaseQuantity(item)" class="control-btn" aria-label="Aumentar cantidad">
+        <button
+          (click)="onIncreaseQuantity(item)"
+          class="control-btn"
+          aria-label="Aumentar cantidad"
+        >
           <span>+</span>
         </button>
-        <button (click)="onRemoveItem(item)" class="remove-btn" aria-label="Eliminar producto">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button
+          (click)="onRemoveItem(item)"
+          class="remove-btn"
+          aria-label="Eliminar producto"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <polyline points="3 6 5 6 21 6"></polyline>
-            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            <path
+              d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+            ></path>
           </svg>
         </button>
       </div>
-      
+
       <div class="item-subtotal">
-        ${{ (item.price * item.quantity) | number:'1.2-2' }}
+        ${{ item.price * item.quantity | number : "1.2-2" }}
       </div>
     </li>
   </ul>
@@ -43,22 +88,40 @@
   <footer class="cart-footer">
     <div class="cart-total">
       <span>Total:</span>
-      <strong>${{ onGetTotal() | number:'1.2-2' }}</strong>
+      <strong>${{ onGetTotal() | number : "1.2-2" }}</strong>
     </div>
-    <button class="checkout-btn" (click)="onCheckout()">Guardar Carrito</button>
-    <button class="checkout-btn" (click)="onCheckout()">Proceder al pago</button>
+    <button class="checkout-btn" (click)="onSaveCart()">Guardar Carrito</button>
+    <button
+      class="checkout-btn"
+      (click)="onPayCart()"
+      [disabled]="!isCartSaved"
+    >
+      Proceder al pago
+    </button>
   </footer>
 </div>
 
 <ng-template #emptyCart>
   <div class="empty-cart">
-    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="10" cy="20.5" r="1"/><circle cx="18" cy="20.5" r="1"/>
-      <path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"/>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="64"
+      height="64"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <circle cx="10" cy="20.5" r="1" />
+      <circle cx="18" cy="20.5" r="1" />
+      <path
+        d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"
+      />
     </svg>
     <h3>Tu carrito está vacío</h3>
     <p>Agrega algunos productos para comenzar</p>
     <a href="#restaurants" class="browse-btn">Explorar productos</a>
   </div>
-</ng-template>  
-  
+</ng-template>

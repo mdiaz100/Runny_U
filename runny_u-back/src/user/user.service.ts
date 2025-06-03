@@ -9,10 +9,10 @@ import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class UserService {
-
-  constructor(@InjectRepository(User) private userRepository: Repository<User>,
-    private jwtService: JwtService
-) {}
+  constructor(
+    @InjectRepository(User) private userRepository: Repository<User>,
+    private jwtService: JwtService,
+  ) {}
 
   async create(createUserDto: CreateUserDto) {
     try {
@@ -20,15 +20,15 @@ export class UserService {
       const passwordHash = bcrypt.hashSync(password, 10);
       const newUser = this.userRepository.create({
         password: passwordHash,
-        ...user
+        ...user,
       });
       const userDB = await this.userRepository.save(newUser);
       return {
         success: true,
-        token: this.getToken(userDB)
-      }
+        token: this.getToken(userDB),
+      };
     } catch (error) {
-      throw new BadRequestException({code:error.code, detail:error.detail})
+      throw new BadRequestException({ code: error.code, detail: error.detail });
     }
   }
 

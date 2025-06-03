@@ -6,22 +6,20 @@ import Swal from 'sweetalert2';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate {
+export class NoAuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(): boolean {
     if (this.authService.isLoggedIn()) {
-      return true;
-    } else {
       Swal.fire({
         icon: 'warning',
-        title: 'Inicia sesión',
-        text: 'debes iniciar sesión para acceder a tu carrito.',
+        title: 'Ya iniciaste sesión',
         confirmButtonColor: '#ffab00',
         confirmButtonText: 'OK',
       });
-      this.router.navigate(['/login']);
+      this.router.navigate(['/']);
       return false;
     }
+    return true;
   }
 }

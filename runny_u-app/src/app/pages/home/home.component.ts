@@ -14,7 +14,7 @@ import { User } from '../../shared/interfaces/user.interface';
   standalone: true,
   imports: [NgFor, RouterModule, FormsModule, NgIf],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
   restaurants: Restaurant[] = [];
@@ -34,4 +34,3 @@ export class HomeComponent implements OnInit {
     this.user = this.authService.getLoggedInUser();
   }
 }
-

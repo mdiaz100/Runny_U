@@ -10,7 +10,6 @@ export class BillService {
     private billRepository: Repository<Bill>,
   ) {}
 
-  // src/bill/bill.service.ts
   async getBillsByUser(
     userId: string,
   ): Promise<{ numberBill: number; items: any[] }[]> {

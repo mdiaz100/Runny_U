@@ -16,8 +16,8 @@ export class Cart {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ type: 'jsonb' , name: 'cart_items'})
-    cartItems: CartItem[];
+  @Column({ type: 'jsonb', name: 'cart_items' })
+  cartItems: CartItem[];
 
   @Column()
   total: number;
@@ -30,5 +30,4 @@ export class Cart {
 
   @OneToOne(() => Bill, (bill) => bill.cart)
   bill: Bill;
-
 }

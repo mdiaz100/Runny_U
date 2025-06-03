@@ -1,56 +1,78 @@
 <body>
-    <main>
-      <section class="hero" *ngIf="!isLoggedIn">
-        <div class="hero-content">
-          <h2>Evita las filas, disfruta tu comida</h2>
-          <p>Realiza pedidos anticipados en los restaurantes de tu universidad y recógelos cuando quieras</p>
-          <button (click)="router.navigate(['/sign-up'])" class="cta-button">
-            <i class="fas fa-user-plus"></i> Regístrate con tu correo universitario
-          </button>
-        </div>
-      </section>
+  <main>
+    <section class="hero" *ngIf="!isLoggedIn">
+      <div class="hero-content">
+        <h2>Evita las filas, disfruta tu comida</h2>
+        <p>
+          Realiza pedidos anticipados en los restaurantes de tu universidad y
+          recógelos cuando quieras
+        </p>
+        <button (click)="router.navigate(['/sign-up'])" class="cta-button">
+          <i class="fas fa-user-plus"></i> Regístrate con tu correo
+          universitario
+        </button>
+      </div>
+    </section>
 
-      <section class="promotions">
-        <div class="section-header">
-          <h2><i class="fas fa-percentage"></i> Promociones Especiales</h2>
-          <p>Descuentos y ofertas exclusivas de los restaurantes del campus</p>
-        </div>
-  
-        <div class="promotions-grid">
-          <div class="promotion-card" *ngFor="let promo of promotions">
-            <div class="promotion-badge">{{ promo.badge }}</div>
-            <img class="promotion-img" [src]="promo.image" alt="Promo de {{ promo.restaurant }}">
-            <div class="promotion-content">
-              <h3>{{ promo.title }}</h3>
-              <p class="restaurant-name"><i class="fas fa-utensils"></i>{{ promo.restaurant }}</p>
-              <p class="promo-desc">{{ promo.description }}</p>
-              <div class="promo-meta">
-                <span class="promo-date"><i class="far fa-calendar-alt"></i> Válido hasta: {{ promo.date }}</span>
-                <span class="promo-time"><i class="far fa-clock"></i> {{ promo.time }}</span>
-              </div>
+    <section class="promotions">
+      <div class="section-header">
+        <h2><i class="fas fa-percentage"></i> Promociones Especiales</h2>
+        <p>Descuentos y ofertas exclusivas de los restaurantes del campus</p>
+      </div>
+
+      <div class="promotions-grid">
+        <div class="promotion-card" *ngFor="let promo of promotions">
+          <div class="promotion-badge">{{ promo.badge }}</div>
+          <img
+            class="promotion-img"
+            [src]="promo.image"
+            alt="Promo de {{ promo.restaurant }}"
+          />
+          <div class="promotion-content">
+            <h3>{{ promo.title }}</h3>
+            <p class="restaurant-name">
+              <i class="fas fa-utensils"></i>{{ promo.restaurant }}
+            </p>
+            <p class="promo-desc">{{ promo.description }}</p>
+            <div class="promo-meta">
+              <span class="promo-date"
+                ><i class="far fa-calendar-alt"></i> Válido hasta:
+                {{ promo.date }}</span
+              >
+              <span class="promo-time"
+                ><i class="far fa-clock"></i> {{ promo.time }}</span
+              >
             </div>
           </div>
         </div>
-      </section>
-  
-      <section id="search-results" class="search-results" style="display: none;">
-        <h2>Resultados de búsqueda</h2>
-        <div class="results-grid"></div>
-      </section>
-  
-      <section id="restaurants" class="restaurants">
-        <h2>Restaurantes disponibles en el campus</h2>
-        <div class="restaurant-grid">
-          <div class="restaurant-card" *ngFor="let restaurant of restaurants" (click)="router.navigate(['/restaurant', restaurant.id])">
-            <img class="restaurant-img" [src]="restaurant.image" alt="Logo de {{ restaurant.name }}">
-            <div class="restaurant-info">
-              <h3>{{ restaurant.name }}</h3>
-              <p><i class="fas fa-clock"></i>{{ restaurant.schedule }}</p>
-              <p><i class="fas fa-walking"></i>{{ restaurant.location }}</p>
-            </div>
+      </div>
+    </section>
+
+    <section id="search-results" class="search-results" style="display: none">
+      <h2>Resultados de búsqueda</h2>
+      <div class="results-grid"></div>
+    </section>
+
+    <section id="restaurants" class="restaurants">
+      <h2>Restaurantes disponibles en el campus</h2>
+      <div class="restaurant-grid">
+        <div
+          class="restaurant-card"
+          *ngFor="let restaurant of restaurants"
+          (click)="router.navigate(['/restaurant', restaurant.id])"
+        >
+          <img
+            class="restaurant-img"
+            [src]="restaurant.image"
+            alt="Logo de {{ restaurant.name }}"
+          />
+          <div class="restaurant-info">
+            <h3>{{ restaurant.name }}</h3>
+            <p><i class="fas fa-clock"></i>{{ restaurant.schedule }}</p>
+            <p><i class="fas fa-walking"></i>{{ restaurant.location }}</p>
           </div>
         </div>
-      </section>
-    </main>
-  </body> 
-  
+      </div>
+    </section>
+  </main>
+</body>

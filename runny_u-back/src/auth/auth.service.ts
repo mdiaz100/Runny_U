@@ -10,36 +10,30 @@ import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class AuthService {
+  constructor(
+    @InjectRepository(User) private userRepository: Repository<User>,
+    private userService: UserService,
+  ) {}
 
-    constructor(
-        @InjectRepository(User) private userRepository: Repository<User>,
-        private userService: UserService
-    ) { }
-
-
-    async login(loginDto: LoginDto) {
-
-        const user = await this.userRepository.findOneBy({ email: loginDto.email });
-        if (user) {
-            const isValidUser = bcrypt.compareSync(loginDto.password, user.password);
-            if (!!isValidUser) {
-                return {
-                    success: true,
-                    token: this.userService.getToken(user)
-                }
-            }
-
-        }
-        throw new NotFoundException({ code: '400', detail: 'Invalid credentials' });
+  async login(loginDto: LoginDto) {
+    const user = await this.userRepository.findOneBy({ email: loginDto.email });
+    if (user) {
+      const isValidUser = bcrypt.compareSync(loginDto.password, user.password);
+      if (!!isValidUser) {
+        return {
+          success: true,
+          token: this.userService.getToken(user),
+        };
+      }
     }
+    throw new NotFoundException({ code: '400', detail: 'Invalid credentials' });
+  }
 
-
-    signUp(signUpDto: SignUpDto): Promise<LoginResponse> {
-        return this.userService.create({
-            email: signUpDto.email!,
-            password: signUpDto.password!,
-            fullname: signUpDto.fullname,
-        });
-    }
-
+  signUp(signUpDto: SignUpDto): Promise<LoginResponse> {
+    return this.userService.create({
+      email: signUpDto.email!,
+      password: signUpDto.password!,
+      fullname: signUpDto.fullname,
+    });
+  }
 }

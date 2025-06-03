@@ -1,7 +1,16 @@
-import { Controller, Post, Body, Param, Get, Patch, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Param,
+  Get,
+  Patch,
+  Delete,
+} from '@nestjs/common';
 import { CartService } from './cart.service';
 import { UpdateCartDto } from './dto/update-cart.dto';
 import { Cart } from './entities/cart.entity';
+import { Bill } from 'src/bill/entities/bill.entity';
 
 @Controller('v1/cart')
 export class CartController {
@@ -32,8 +41,8 @@ export class CartController {
     return this.cartService.deleteCart(id);
   }
 
-  @Post(':id/pay')
-  payCart(@Param('id') id: string) {
-    return this.cartService.generateBill(id);
+  @Post('pay/:id')
+  async payCart(@Param('id') id: string): Promise<Bill> {
+    return this.cartService.payCart(id);
   }
 }

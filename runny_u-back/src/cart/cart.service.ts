@@ -17,85 +17,91 @@ export class CartService {
     private userRepository: Repository<User>,
 
     @InjectRepository(Bill)
-    private billRepository: Repository<Bill>
+    private billRepository: Repository<Bill>,
   ) {}
 
   async createCart(user: User, cartItems: CartItem[]): Promise<Cart> {
-  /*const user = await this.userRepository.findOneBy({ id: userId });
-  if (!user) {
-    throw new Error('User not found');
-  };
-*/
-  const cart = this.cartRepository.create({
-    user: user,
-    cartItems,
-    total: cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0),
-  });
+    const cart = this.cartRepository.create({
+      user: user,
+      cartItems,
+      total: cartItems.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0,
+      ),
+    });
 
-  return this.cartRepository.save(cart);
-}
-
+    return this.cartRepository.save(cart);
+  }
 
   async getUserCarts(userId: string): Promise<Cart[]> {
-    return this.cartRepository.find({ where: { user: { id: userId } }, relations: ['bill'] });
+    return this.cartRepository.find({
+      where: { user: { id: userId } },
+      relations: ['bill'],
+    });
   }
 
-async getCartById(id: string): Promise<Cart> {
-  const cart = await this.cartRepository.findOne({
-    where: { id },
-    relations: ['bill', 'user'],
-  });
+  async getCartById(id: string): Promise<Cart> {
+    const cart = await this.cartRepository.findOne({
+      where: { id },
+      relations: ['bill', 'user'],
+    });
 
-  if (!cart) {
-    throw new NotFoundException(`Cart with id ${id} not found`);
+    if (!cart) {
+      throw new NotFoundException(`Cart with id ${id} not found`);
+    }
+
+    return cart;
   }
 
-  return cart;
-}
+  async updateCart(cartId: string, update: UpdateCartDto): Promise<Cart> {
+    const cart = await this.getCartById(cartId);
 
-async updateCart(cartId: string, update: UpdateCartDto): Promise<Cart> {
-  const cart = await this.getCartById(cartId);
+    if (!update.cartItem || !Array.isArray(update.cartItem)) {
+      throw new Error('Cart items must be provided as an array.');
+    }
 
-  // Validar que cartItem existe y es un arreglo
-  if (!update.cartItem || !Array.isArray(update.cartItem)) {
-    throw new Error('Cart items must be provided as an array.');
+    cart.cartItems = update.cartItem;
+    cart.total = update.cartItem.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0,
+    );
+
+    return this.cartRepository.save(cart);
   }
-
-  cart.cartItems = update.cartItem;
-  cart.total = update.cartItem.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0,
-  );
-
-  return this.cartRepository.save(cart);
-}
-
 
   async deleteCart(cartId: string): Promise<void> {
     await this.cartRepository.delete(cartId);
   }
 
-  async generateBill(cartId: string): Promise<Bill> {
-  const cart = await this.getCartById(cartId);
+  async payCart(cartId: string): Promise<Bill> {
+    const cart = await this.cartRepository.findOne({
+      where: { id: cartId },
+      relations: ['bill'],
+    });
 
-  const lastBills = await this.billRepository.find({
-    order: { numberBill: 'DESC' },
-    take: 1,
-  });
-  const lastBill = lastBills[0];
-  const nextNumber = lastBill ? lastBill.numberBill + 1 : 1;
+    if (!cart) {
+      throw new NotFoundException('Carrito no encontrado');
+    }
 
-  const bill = this.billRepository.create({
-    total: cart.total,
-    numberBill: nextNumber,
-    cart: cart,
-  });
+    const total = cart.cartItems.reduce((sum, item) => {
+      return sum + item.price * item.quantity;
+    }, 0);
 
-  if (bill.total <= 0) {
-  throw new Error('Cannot generate bill from an empty cart.');
-}
+    const lastBill = await this.billRepository.find({
+      order: { numberBill: 'DESC' },
+      take: 1,
+    });
 
-  return this.billRepository.save(bill);
-}
+    const numberBill = lastBill.length > 0 ? lastBill[0].numberBill + 1 : 1;
 
+    const bill = this.billRepository.create({
+      numberBill,
+      total,
+      cart,
+    });
+
+    await this.billRepository.save(bill);
+
+    return bill;
+  }
 }

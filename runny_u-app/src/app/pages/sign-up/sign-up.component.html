@@ -1,5 +1,4 @@
 <div class="auth-container">
-  
   <div class="auth-image">
     <img src="assets/logos/logoudm.png" alt="Logo" class="auth-logo" />
   </div>
@@ -11,18 +10,23 @@
       <p>Crea tu cuenta con tu correo institucional</p>
     </div>
 
-    
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="auth-form">
-      
-
       <div class="input-group">
         <label for="fullname">Nombre completo</label>
-        <input formControlName="fullname" type="text" placeholder="Ej: María González" />
+        <input
+          formControlName="fullname"
+          type="text"
+          placeholder="Ej: María González"
+        />
       </div>
 
       <div class="input-group">
         <label for="email">Correo electrónico</label>
-        <input formControlName="email" type="email" placeholder="tucorreo@soyudemedellin.edu.co" />
+        <input
+          formControlName="email"
+          type="email"
+          placeholder="tucorreo@soyudemedellin.edu.co"
+        />
       </div>
 
       <div class="input-group password-input">
@@ -36,7 +40,6 @@
           Mínimo 8 caracteres, incluye números y letras
         </div>
       </div>
-      
 
       <div class="input-group password-input">
         <label for="confirmPassword">Confirmar contraseña</label>
@@ -48,28 +51,26 @@
         <label>Acepto los términos y condiciones</label>
       </div>
 
-      <button type="submit" class="auth-button">
-        Crear Cuenta
-      </button>
+      <button type="submit" class="auth-button">Crear Cuenta</button>
     </form>
 
-    
     <div class="auth-footer">
       ¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a>
     </div>
 
-    
     <div class="back-button-container">
-      <button class="back-button" type="button" (click)="router.navigate(['/'])"> 
+      <button
+        class="back-button"
+        type="button"
+        (click)="router.navigate(['/'])"
+      >
         <i class="fas fa-arrow-left"></i> Regresar al inicio
       </button>
     </div>
 
-    
     <div class="university-badge">
       <i class="fas fa-university"></i>
       <p>Solo para miembros de la universidad</p>
     </div>
   </div>
 </div>
-  

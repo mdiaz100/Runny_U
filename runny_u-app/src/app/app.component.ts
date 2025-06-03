@@ -6,19 +6,19 @@ import { HeaderComponent } from './shared/components/header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FooterComponent,HeaderComponent, NgIf],
+  imports: [RouterOutlet, FooterComponent, HeaderComponent, NgIf],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'runny_u-app';
-  router = inject(Router)
+  router = inject(Router);
   hideFooter(): boolean {
-    const routesWithoutFooter = ['/login', '/sign-up', '/cart' ]; 
+    const routesWithoutFooter = ['/login', '/sign-up', '/cart'];
     return routesWithoutFooter.includes(this.router.url);
   }
   hideHeader(): boolean {
-    const routesWithoutHeader = ['/login', '/sign-up']; 
+    const routesWithoutHeader = ['/login', '/sign-up'];
     return routesWithoutHeader.includes(this.router.url);
   }
 }

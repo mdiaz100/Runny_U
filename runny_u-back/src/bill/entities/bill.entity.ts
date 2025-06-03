@@ -25,6 +25,5 @@ export class Bill {
 
   @OneToOne(() => Cart, (cart) => cart.bill)
   @JoinColumn()
-  cart: Cart
-
+  cart: Cart;
 }

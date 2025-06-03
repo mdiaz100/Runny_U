@@ -3,29 +3,33 @@ import { Router, NavigationEnd } from '@angular/router';
 import { NgIf, NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { filter } from 'rxjs/operators';
-import { User } from '../../interfaces/user.interface';
 import { Restaurant } from '../../interfaces/restaurant.interface';
 import { AuthService } from '../../services/auth.service';
 import { RestaurantService } from '../../services/restaurant.service';
 import { CartService } from '../../services/cart.service';
-import Swal from 'sweetalert2'; // ✅ Importar SweetAlert2
+import Swal from 'sweetalert2';
+import { JwtPayload } from '../../interfaces/jwt-payload.interface';
+import { BillService } from '../../services/bill.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [NgIf, NgFor, FormsModule],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
   isLoggedIn: boolean = false;
-  user: User | null = null;
+  user: JwtPayload | null = null;
 
   showProfileModal: boolean = false;
   searchTerm: string = '';
   showSearchResults: boolean = false;
   filteredRestaurants: Restaurant[] = [];
   allRestaurants: Restaurant[] = [];
+  bills: any[] = [];
+  showBillsModal = false;
+  userBills: any[] = [];
 
   isRestaurantDetailRoute: boolean = false;
   totalItems: number = 0;
@@ -34,21 +38,26 @@ export class HeaderComponent implements OnInit {
   cartService = inject(CartService);
   restaurantService = inject(RestaurantService);
   router = inject(Router);
+  billService = inject(BillService);
+
 
   ngOnInit(): void {
-    this.isLoggedIn = this.authService.isLoggedIn();
-    this.user = this.authService.getLoggedInUser();
+    this.authService.user$.subscribe((user) => {
+      this.isLoggedIn = !!user;
+      this.user = user;
+    });
+
     this.allRestaurants = this.restaurantService.getRestaurants();
     this.filteredRestaurants = this.allRestaurants;
 
     this.onUpdateRouteState(this.router.url);
 
-    this.cartService.totalItems$.subscribe(count => {
+    this.cartService.totalItems$.subscribe((count) => {
       this.totalItems = count;
     });
 
     this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
+      .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         this.onUpdateRouteState(event.urlAfterRedirects);
       });
@@ -68,11 +77,10 @@ export class HeaderComponent implements OnInit {
       icon: 'success',
       title: 'Sesión cerrada',
       text: 'Has cerrado sesión correctamente.',
-      confirmButtonColor: '#ffab00', 
-      confirmButtonText: 'OK'
-    })
+      confirmButtonColor: '#ffab00',
+      confirmButtonText: 'OK',
+    });
     this.router.navigate(['/']);
-    
   }
 
   onOpenProfileModal(): void {
@@ -86,7 +94,7 @@ export class HeaderComponent implements OnInit {
   onSearch(event: Event): void {
     event.preventDefault();
     const term = this.searchTerm.toLowerCase().trim();
-    this.filteredRestaurants = this.allRestaurants.filter(r =>
+    this.filteredRestaurants = this.allRestaurants.filter((r) =>
       r.name.toLowerCase().includes(term)
     );
     this.showSearchResults = true;
@@ -95,13 +103,26 @@ export class HeaderComponent implements OnInit {
   onCloseSearchResults(): void {
     this.showSearchResults = false;
   }
+  openBillsModal(): void {
+    const userId = this.user?.id;
 
-  goToOrders(): void {
-  this.onCloseProfileModal();
-  this.router.navigate(['/orders']);
+    if (!userId) {
+      Swal.fire('Error', 'Usuario no válido', 'error');
+      return;
+    }
+
+    this.billService.getBillsByUser(userId).subscribe({
+      next: (bills) => {
+        this.userBills = bills;
+        this.showBillsModal = true;
+      },
+      error: () => {
+        Swal.fire('Error', 'No se pudieron cargar los pedidos', 'error');
+      },
+    });
+  }
+
+  closeBillsModal(): void {
+    this.showBillsModal = false;
+  }
 }
-
-}
-
-
-

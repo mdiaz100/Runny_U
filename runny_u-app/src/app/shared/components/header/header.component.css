@@ -1,223 +1,376 @@
 :root {
-    --primary: #780000; 
-    --secondary: #ffab00; 
-    --accent: #c1121f; 
-    --light-bg: #f5f5f6;
-    --dark-text: #2c3e50;
-    --white: #ffffff;
+  --primary: #780000;
+  --secondary: #ffab00;
+  --accent: #c1121f;
+  --light-bg: #f5f5f6;
+  --dark-text: #2c3e50;
+  --white: #ffffff;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: var(--light-bg);
-    color: var(--dark-text);
+  background-color: #f4f6f8;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Header institucional */
 header {
-    background-color: var(--white);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-bottom: 4px solid var(--primary);
+  background-color: var(--white);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid var(--primary);
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
 }
 
 .logo img {
-    height: 40px;
+  height: 40px;
 }
 
 .logo h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
 }
 
 .logo span {
-    color: var(--secondary);
+  color: var(--secondary);
 }
 
 /* Navegación */
 nav ul.menu-header {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
 }
 
 nav ul.menu-header li a {
-    color: var(--dark-text);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  color: var(--dark-text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 nav ul.menu-header li a:hover {
-    background-color: var(--primary);
-    color: var(--white);
+  background-color: var(--primary);
+  color: var(--white);
 }
 
 .modalSearch {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
-  
-  .modal-content-search {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    max-height: 80%;
-    overflow-y: auto;
-    width: 90%;
-    max-width: 600px;
-    position: relative;
-  }
-  
-  .close-search {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
-  .modalProfile {
-    display: block;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-  }
-  
-  .modal-content-profile {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 400px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  }
-  
-  .close-profile {
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
 
-  /* Estilos para la barra de búsqueda */
+.modal-content-search {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-height: 80%;
+  overflow-y: auto;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+}
+
+.close-search {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Estilos para la barra de búsqueda */
 .search-container {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 1rem;
 }
 
 #search-form {
-    display: flex;
-    position: relative;
+  display: flex;
+  position: relative;
 }
 
 #search-input {
-    width: 100%;
-    padding: 0.8rem 1.2rem;
-    border: 2px solid #ddd;
-    border-radius: 30px;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s;
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid #ddd;
+  border-radius: 30px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s;
 }
 
 #search-input:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.2);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.2);
 }
 
 #search-form button {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: var(--primary);
-    cursor: pointer;
-    font-size: 1.2rem;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 
 /* Estilos para resultados de búsqueda */
 .search-results {
-    padding: 2rem;
-    background-color: var(--white);
-    margin-top: 1rem;
+  padding: 2rem;
+  background-color: var(--white);
+  margin-top: 1rem;
 }
 
 .search-results h2 {
-    color: var(--primary);
-    margin-bottom: 1.5rem;
-    text-align: center;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .results-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
 /* Adaptación para móviles */
 @media (max-width: 768px) {
-    header {
-        flex-wrap: wrap;
-    }
-    
-    .search-container {
-        order: 3;
-        width: 100%;
-        margin: 1rem 0 0;
-    }
+  header {
+    flex-wrap: wrap;
+  }
 
-    
-    .logo {
-        margin-bottom: 1rem;
-    }
+  .search-container {
+    order: 3;
+    width: 100%;
+    margin: 1rem 0 0;
+  }
 
-    nav ul.menu-header {
-        flex-direction: column;
-        gap: 0.5rem;
-        width: 100%;
-    }
+  .logo {
+    margin-bottom: 1rem;
+  }
 
-    nav ul.menu-header li a {
-        justify-content: center;
-    }
+  nav ul.menu-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  nav ul.menu-header li a {
+    justify-content: center;
+  }
+}
+
+/* === Base para ambos modales === */
+.modalProfile,
+.modalBills {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 1rem;
+  animation: fadeInOverlay 0.3s ease-in-out;
+}
+
+/* === Contenido de ambos modales === */
+.modal-content-profile,
+.modal-content-bills {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 18px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 550px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  animation: slideIn 0.4s ease-in-out;
+  border: 1px solid #ddd;
+}
+
+/* .modal-content-profile {
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 500px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  animation: slideIn 0.4s ease-in-out;
+  border: 1px solid #dcdcdc;
+  text-align: center;
+} */
+
+/* Título */
+.modal-content-profile h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #34495e;
+}
+
+/* Contenedor de datos del perfil */
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  font-size: 1.05rem;
+}
+
+.profile-details p {
+  margin: 0;
+  padding: 0.8rem 1rem;
+  background-color: #ecf0f1;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease;
+}
+
+.profile-details p:hover {
+  background-color: #dfe6e9;
+}
+
+.profile-details strong {
+  color: #2980b9;
+}
+
+/* === Botones de cierre === */
+.close-profile,
+.close-bills {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #999;
+  background-color: #f7f7f7;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.close-profile:hover,
+.close-bills:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* .profile-details p {
+  margin: 1rem 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.profile-details strong {
+  color: #2c3e50;
+} */
+
+/* === Contenido de facturas === */
+
+.modal-content-bills h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #34495e;
+}
+
+.bill-item {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fafafa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.bill-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: #2c3e50;
+  font-weight: 700;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem;
+}
+
+.bill-item p strong {
+  color: #27ae60;
+  font-weight: 700;
+}
+
+.bill-item ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.bill-item li::before {
+  content: "🛒 ";
+  margin-right: 0.4rem;
+}
+
+/* === Animaciones === */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInOverlay {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.65);
+  }
 }

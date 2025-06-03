@@ -9,13 +9,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 @Module({
   controllers: [AuthController],
   providers: [AuthService, UserService],
-  imports:[
+  imports: [
     JwtModule.register({
-      global:true,
+      global: true,
       secret: 'AABBCC',
-      signOptions: { expiresIn: '1h' }
+      signOptions: { expiresIn: '1h' },
     }),
-    TypeOrmModule.forFeature([User])
-  ]
+    TypeOrmModule.forFeature([User]),
+  ],
 })
 export class AuthModule {}

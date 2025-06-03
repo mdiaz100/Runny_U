@@ -49,23 +49,20 @@
 .menu-card {
   background-color: rgba(20, 20, 20, 0.5); /* Fondo más oscuro */
   border-radius: 12px;
-  box-shadow:
-    inset 0 0 10px rgba(0, 0, 0, 0.2),
-    0 4px 16px rgba(0, 0, 0, 0.3); /* Más profundidad */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(0, 0, 0, 0.3); /* Más profundidad */
   width: 260px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
   backdrop-filter: blur(4px); /* Mayor difuminado */
 }
 
 .menu-card:hover {
   transform: scale(1.02);
   background-color: rgba(30, 30, 30, 0.85);
-  box-shadow:
-    inset 0 0 14px rgba(0, 0, 0, 0.25),
-    0 6px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.25), 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 .card-image img {

@@ -1,29 +1,34 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { CartItem } from '../interfaces/cart-item.interface';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
   private cartItems: CartItem[] = [];
   private totalItemsSubject = new BehaviorSubject<number>(0);
   private cartUpdatedSubject = new Subject<void>();
+  constructor(private http: HttpClient) {}
+  private API_URL = 'http://localhost:3000/api';
 
-  // Observable para notificar cambios en el carrito
   cartUpdated$ = this.cartUpdatedSubject.asObservable();
   totalItems$ = this.totalItemsSubject.asObservable();
 
   getItems(): CartItem[] {
-    return [...this.cartItems]; // Devolver copia para evitar mutaciones directas
+    return [...this.cartItems];
   }
 
   getTotal(): number {
-    return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    return this.cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
   }
 
   addItem(item: CartItem): void {
-    const existing = this.cartItems.find(i => i.name === item.name);
+    const existing = this.cartItems.find((i) => i.name === item.name);
     if (existing) {
       existing.quantity += 1;
     } else {
@@ -33,7 +38,7 @@ export class CartService {
   }
 
   updateItemQuantity(item: CartItem, quantity: number): void {
-    const existing = this.cartItems.find(i => i.name === item.name);
+    const existing = this.cartItems.find((i) => i.name === item.name);
     if (existing) {
       existing.quantity = quantity;
       this.notifyChanges();
@@ -41,7 +46,7 @@ export class CartService {
   }
 
   removeItem(item: CartItem): void {
-    this.cartItems = this.cartItems.filter(i => i !== item);
+    this.cartItems = this.cartItems.filter((i) => i !== item);
     this.notifyChanges();
   }
 
@@ -52,11 +57,18 @@ export class CartService {
 
   private notifyChanges(): void {
     this.updateTotalItems();
-    this.cartUpdatedSubject.next(); // Notificar a los suscriptores
+    this.cartUpdatedSubject.next();
   }
 
   private updateTotalItems(): void {
     const total = this.cartItems.reduce((sum, item) => sum + item.quantity, 0);
     this.totalItemsSubject.next(total);
   }
-} 
+  createCart(cartData: any) {
+    return this.http.post<CartItem>(`${this.API_URL}/v1/cart/create`, cartData);
+  }
+
+  payCart(cartId: string): Observable<any> {
+    return this.http.post(`${this.API_URL}/v1/cart/pay/${cartId}`, {});
+  }
+}
