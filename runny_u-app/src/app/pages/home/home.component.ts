@@ -28,7 +28,10 @@ export class HomeComponent implements OnInit {
   authService = inject(AuthService);
 
   ngOnInit(): void {
-    this.restaurants = this.restaurantService.getRestaurants();
+    this.restaurantService.getRestaurants().subscribe({
+      next: (data) => (this.restaurants = data),
+      error: (err) => console.error('Error cargando restaurantes', err),
+    });
     this.promotions = this.promotionService.getPromotions();
     this.isLoggedIn = this.authService.isLoggedIn();
     this.user = this.authService.getLoggedInUser();

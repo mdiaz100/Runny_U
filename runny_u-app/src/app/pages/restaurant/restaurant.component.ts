@@ -25,11 +25,16 @@ export class RestaurantComponent implements OnInit {
   isLoggedIn: boolean = false;
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.restaurant = this.restaurantService.getRestaurantById(id);
-    }
+  const id = this.route.snapshot.paramMap.get('id');
+  if (id) {
+    this.restaurantService.getRestaurantById(id).subscribe({
+      next: (restaurant) => {
+        this.restaurant = restaurant; 
+      },
+      error: (err) => console.error('Error cargando restaurante', err),
+    });
   }
+}
 
   onAddToCart(item: {
     id: string;

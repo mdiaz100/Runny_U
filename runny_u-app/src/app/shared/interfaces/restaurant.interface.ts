@@ -8,6 +8,7 @@ export interface Restaurant {
   description: string;
 }
 
+
 export interface Category {
   category: string;
   items: MenuItem[];

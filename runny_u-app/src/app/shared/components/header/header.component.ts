@@ -40,6 +40,8 @@ export class HeaderComponent implements OnInit {
   router = inject(Router);
   billService = inject(BillService);
 
+  restaurants: Restaurant[] = [];
+
 
   ngOnInit(): void {
     this.authService.user$.subscribe((user) => {
@@ -47,7 +49,10 @@ export class HeaderComponent implements OnInit {
       this.user = user;
     });
 
-    this.allRestaurants = this.restaurantService.getRestaurants();
+    this.restaurantService.getRestaurants().subscribe({
+      next: (data) => (this.restaurants = data),
+      error: (err) => console.error('Error cargando restaurantes', err),
+    });
     this.filteredRestaurants = this.allRestaurants;
 
     this.onUpdateRouteState(this.router.url);
