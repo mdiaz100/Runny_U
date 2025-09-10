@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { createClient } from '@supabase/supabase-js';
 import 'dotenv/config';
+import { RestaurantDto } from './dto/restaurant.dto';
 
 @Injectable()
 export class RestaurantService {
@@ -9,7 +10,7 @@ export class RestaurantService {
     process.env.SUPABASE_KEY as string
  );
 
-  async findAll(): Promise<any[]> {
+  async findAll(): Promise<RestaurantDto[]> {
     const { data, error } = await this.supabase.rpc('get_restaurants_with_menu');
 
     if (error) {
@@ -19,7 +20,7 @@ export class RestaurantService {
     return data ?? [];
   }
 
-  async findById(id: string): Promise<any> {
+  async findById(id: string): Promise<RestaurantDto | null> {
   const { data, error } = await this.supabase
     .rpc('get_restaurant_by_id', { p_restaurant_id: id }); 
 
