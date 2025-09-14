@@ -23,8 +23,8 @@ export class CartComponent implements OnInit, OnDestroy {
   private cartSubscription!: Subscription;
   authService = inject(AuthService);
 
-  private cartService = inject(CartService);
-  private currencyPipe = inject(CurrencyPipe);
+  private readonly cartService = inject(CartService);
+  private readonly currencyPipe = inject(CurrencyPipe);
 
   ngOnInit(): void {
     this.loadCartItems();

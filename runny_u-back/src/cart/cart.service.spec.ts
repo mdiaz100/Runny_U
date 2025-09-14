@@ -20,15 +20,16 @@ describe('CartService', () => {
           useValue: {
             create: jest.fn(),
             save: jest.fn(),
+            find: jest.fn(), // mock necesario para getUserCarts
           },
         },
         {
           provide: getRepositoryToken(User),
-          useValue: {}, // mock vacío, no lo usamos en esta prueba
+          useValue: {}, // mock vacío
         },
         {
           provide: getRepositoryToken(Bill),
-          useValue: {}, // mock vacío, no lo usamos en esta prueba
+          useValue: {}, // mock vacío
         },
       ],
     }).compile();
@@ -50,12 +51,12 @@ describe('CartService', () => {
       { productId: 'p2', name: 'Producto B', price: 50, quantity: 3, image: 'b.png' },
     ];
 
-    const expectedCart: Cart = {
+    const expectedCart: Partial<Cart> = {
       id: '1',
       user,
       cartItems,
       total: 350,
-    } as Cart;
+    };
 
     (cartRepository.create as jest.Mock).mockReturnValue(expectedCart);
     (cartRepository.save as jest.Mock).mockResolvedValue(expectedCart);
@@ -70,5 +71,37 @@ describe('CartService', () => {
     expect(cartRepository.save).toHaveBeenCalledWith(expectedCart);
     expect(result).toEqual(expectedCart);
   });
+
+  it('debería retornar los carritos de un usuario con su bill asociado', async () => {
+    const userId = '1';
+
+    const mockCarts: Partial<Cart>[] = [
+      {
+        id: 'c1',
+        user: { id: userId } as User,
+        cartItems: [],
+        total: 100,
+        bill: { id: 'b1' } as Bill,
+      },
+      {
+        id: 'c2',
+        user: { id: userId } as User,
+        cartItems: [],
+        total: 200,
+        bill: { id: 'b2' } as Bill,
+      },
+    ];
+
+    (cartRepository.find as jest.Mock).mockResolvedValue(mockCarts);
+
+    const result = await service.getUserCarts(userId);
+
+    expect(cartRepository.find).toHaveBeenCalledWith({
+      where: { user: { id: userId } },
+      relations: ['bill'],
+    });
+    expect(result).toEqual(mockCarts);
+  });
 });
+
 
