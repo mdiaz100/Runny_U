@@ -11,8 +11,8 @@ import Swal from 'sweetalert2';
   imports: [ReactiveFormsModule],
 })
 export class LoginComponent {
-  private fb = inject(FormBuilder);
-  private authService = inject(AuthService);
+  private readonly fb = inject(FormBuilder);
+  private readonly authService = inject(AuthService);
   router = inject(Router);
 
   loginForm = this.fb.group({
