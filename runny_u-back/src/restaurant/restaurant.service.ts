@@ -5,7 +5,7 @@ import { RestaurantDto } from './dto/restaurant.dto';
 
 @Injectable()
 export class RestaurantService {
-  private supabase = createClient(
+  private readonly supabase = createClient(
     process.env.SUPABASE_URL as string,
     process.env.SUPABASE_KEY as string
  );

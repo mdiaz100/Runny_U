@@ -11,15 +11,15 @@ import * as bcrypt from 'bcrypt';
 @Injectable()
 export class AuthService {
   constructor(
-    @InjectRepository(User) private userRepository: Repository<User>,
-    private userService: UserService,
+    @InjectRepository(User) private readonly userRepository: Repository<User>,
+    private readonly userService: UserService,
   ) {}
 
   async login(loginDto: LoginDto) {
     const user = await this.userRepository.findOneBy({ email: loginDto.email });
     if (user) {
       const isValidUser = bcrypt.compareSync(loginDto.password, user.password);
-      if (!!isValidUser) {
+      if (!isValidUser) {
         return {
           success: true,
           token: this.userService.getToken(user),

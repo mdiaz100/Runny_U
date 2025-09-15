@@ -11,13 +11,13 @@ import { CartItem } from './dto/cart-item.dto';
 export class CartService {
   constructor(
     @InjectRepository(Cart)
-    private cartRepository: Repository<Cart>,
+    private readonly cartRepository: Repository<Cart>,
 
     @InjectRepository(User)
-    private userRepository: Repository<User>,
+    private readonly userRepository: Repository<User>,
 
     @InjectRepository(Bill)
-    private billRepository: Repository<Bill>,
+    private readonly billRepository: Repository<Bill>,
   ) {}
 
   async createCart(user: User, cartItems: CartItem[]): Promise<Cart> {

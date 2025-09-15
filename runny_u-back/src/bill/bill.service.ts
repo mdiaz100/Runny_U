@@ -7,7 +7,7 @@ import { Bill } from './entities/bill.entity';
 export class BillService {
   constructor(
     @InjectRepository(Bill)
-    private billRepository: Repository<Bill>,
+    private readonly billRepository: Repository<Bill>,
   ) {}
 
   async getBillsByUser(
