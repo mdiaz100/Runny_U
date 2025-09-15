@@ -37,6 +37,10 @@ describe('AuthService', () => {
     userService = module.get(UserService);
   });
 
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   describe('login', () => {
     it('✅ debería devolver token si las credenciales son correctas', async () => {
       const mockUser = {
@@ -56,6 +60,7 @@ describe('AuthService', () => {
 
       expect(userRepository.findOneBy).toHaveBeenCalledWith({ email: 'test@test.com' });
       expect(bcrypt.compareSync).toHaveBeenCalledWith('123456', mockUser.password);
+      expect(userService.getToken).toHaveBeenCalledWith(mockUser);
       expect(result).toEqual({
         success: true,
         token: 'fake-jwt-token',
@@ -75,6 +80,10 @@ describe('AuthService', () => {
       await expect(
         service.login({ email: 'test@test.com', password: 'wrong' }),
       ).rejects.toThrow(NotFoundException);
+
+      expect(userRepository.findOneBy).toHaveBeenCalledWith({ email: 'test@test.com' });
+      expect(bcrypt.compareSync).toHaveBeenCalledWith('wrong', mockUser.password);
+      expect(userService.getToken).not.toHaveBeenCalled();
     });
 
     it('❌ debería lanzar NotFoundException si el usuario no existe', async () => {
@@ -83,11 +92,14 @@ describe('AuthService', () => {
       await expect(
         service.login({ email: 'nouser@test.com', password: '123456' }),
       ).rejects.toThrow(NotFoundException);
+
+      expect(userRepository.findOneBy).toHaveBeenCalledWith({ email: 'nouser@test.com' });
+      expect(userService.getToken).not.toHaveBeenCalled();
     });
   });
 
   describe('signUp', () => {
-    it('✅ debería delegar en userService.create', async () => {
+    it('✅ debería delegar en userService.create y devolver su resultado', async () => {
       const dto = {
         fullname: 'Test User',
         email: 'test@test.com',
@@ -108,3 +120,4 @@ describe('AuthService', () => {
     });
   });
 });
+

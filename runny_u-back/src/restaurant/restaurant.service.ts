@@ -7,11 +7,13 @@ import { RestaurantDto } from './dto/restaurant.dto';
 export class RestaurantService {
   private readonly supabase = createClient(
     process.env.SUPABASE_URL as string,
-    process.env.SUPABASE_KEY as string
- );
+    process.env.SUPABASE_KEY as string,
+  );
 
   async findAll(): Promise<RestaurantDto[]> {
-    const { data, error } = await this.supabase.rpc('get_restaurants_with_menu');
+    const { data, error } = await this.supabase.rpc(
+      'get_restaurants_with_menu',
+    );
 
     if (error) {
       console.error('Supabase RPC error:', error);
@@ -21,25 +23,15 @@ export class RestaurantService {
   }
 
   async findById(id: string): Promise<RestaurantDto | null> {
-  const { data, error } = await this.supabase
-    .rpc('get_restaurant_by_id', { p_restaurant_id: id }); 
+    const { data, error } = await this.supabase.rpc('get_restaurant_by_id', {
+      p_restaurant_id: id,
+    });
 
-  if (error) {
-    console.error('Supabase RPC error:', error);
-    throw new Error(error.message);
+    if (error) {
+      console.error('Supabase RPC error:', error);
+      throw new Error(error.message);
+    }
+
+    return data;
   }
-
-  return data;
 }
-
-
-  
-}
-
-
-
-
-
-
-
-

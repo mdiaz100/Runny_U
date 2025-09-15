@@ -15,18 +15,31 @@ export class AuthService {
     private readonly userService: UserService,
   ) {}
 
-  async login(loginDto: LoginDto) {
-    const user = await this.userRepository.findOneBy({ email: loginDto.email });
-    if (user) {
-      const isValidUser = bcrypt.compareSync(loginDto.password, user.password);
-      if (!isValidUser) {
-        return {
-          success: true,
-          token: this.userService.getToken(user),
-        };
-      }
+  async login(dto: LoginDto) {
+    const user = await this.userRepository.findOneBy({ email: dto.email });
+
+    if (!user) {
+      throw new NotFoundException({
+        code: '400',
+        detail: 'Invalid credentials',
+      });
     }
-    throw new NotFoundException({ code: '400', detail: 'Invalid credentials' });
+
+    const isPasswordValid = bcrypt.compareSync(dto.password, user.password);
+
+    if (!isPasswordValid) {
+      throw new NotFoundException({
+        code: '400',
+        detail: 'Invalid credentials',
+      });
+    }
+
+    const token = this.userService.getToken(user);
+
+    return {
+      success: true,
+      token,
+    };
   }
 
   signUp(signUpDto: SignUpDto): Promise<LoginResponse> {
