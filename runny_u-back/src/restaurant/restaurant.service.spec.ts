@@ -5,19 +5,7 @@ import { RestaurantDto } from './dto/restaurant.dto';
 describe('RestaurantService', () => {
   let service: RestaurantService;
 
-  // Mock completo de Supabase
-  const mockSupabaseClient = {
-    rpc: jest.fn(),
-    from: jest.fn().mockReturnThis(),
-    select: jest.fn().mockReturnThis(),
-    eq: jest.fn().mockReturnThis(),
-    maybeSingle: jest.fn().mockReturnThis(),
-  };
-
-  beforeAll(() => {
-    // Silencia console.error para que no aparezcan mensajes de Supabase
-    jest.spyOn(console, 'error').mockImplementation(() => {});
-  });
+  const mockRpc = jest.fn();
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -25,19 +13,22 @@ describe('RestaurantService', () => {
         RestaurantService,
         {
           provide: 'SUPABASE_CLIENT',
-          useValue: mockSupabaseClient,
+          useValue: { rpc: mockRpc },
         },
       ],
     }).compile();
 
     service = module.get<RestaurantService>(RestaurantService);
+
+    // Reemplaza el cliente real por nuestro mock
+    (service as any).supabase = { rpc: mockRpc };
   });
 
   afterEach(() => {
     jest.clearAllMocks();
   });
 
-  it('✅ debería retornar todos los restaurantes', async () => {
+  it('debería retornar todos los restaurantes', async () => {
     const mockData: RestaurantDto[] = [
       {
         id: '1',
@@ -59,16 +50,15 @@ describe('RestaurantService', () => {
       },
     ];
 
-    // Mockeamos el método interno que llama a Supabase
-    jest.spyOn(service, 'findAll').mockResolvedValue(mockData);
+    mockRpc.mockResolvedValue({ data: mockData, error: null });
 
     const result = await service.findAll();
 
+    expect(mockRpc).toHaveBeenCalledWith('get_restaurants_with_menu');
     expect(result).toEqual(mockData);
-    expect(service.findAll).toHaveBeenCalled();
   });
 
-  it('✅ debería retornar un restaurante por id', async () => {
+  it('debería retornar un restaurante por id', async () => {
     const mockRestaurant: RestaurantDto = {
       id: '1',
       name: 'Restaurante A',
@@ -79,21 +69,34 @@ describe('RestaurantService', () => {
       description: 'Comida típica',
     };
 
-    jest.spyOn(service, 'findById').mockResolvedValue(mockRestaurant);
+    mockRpc.mockResolvedValue({ data: mockRestaurant, error: null });
 
     const result = await service.findById('1');
 
+    expect(mockRpc).toHaveBeenCalledWith('get_restaurant_by_id', { p_restaurant_id: '1' });
     expect(result).toEqual(mockRestaurant);
-    expect(service.findById).toHaveBeenCalledWith('1');
   });
 
-  it('✅ debería retornar null si el restaurante no existe', async () => {
-    jest.spyOn(service, 'findById').mockResolvedValue(null);
+  it('debería retornar null si el restaurante no existe', async () => {
+    mockRpc.mockResolvedValue({ data: null, error: null });
 
     const result = await service.findById('99');
 
     expect(result).toBeNull();
-    expect(service.findById).toHaveBeenCalledWith('99');
+  });
+
+  it('debería retornar [] si hay error en findAll', async () => {
+    mockRpc.mockResolvedValue({ data: null, error: { message: 'DB error' } });
+
+    const result = await service.findAll();
+    expect(result).toEqual([]);
+  });
+
+  it('debería lanzar error si hay error en findById', async () => {
+    mockRpc.mockResolvedValue({ data: null, error: { message: 'No encontrado' } });
+
+    await expect(service.findById('1')).rejects.toThrow('No encontrado');
   });
 });
+
 
