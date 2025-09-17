@@ -69,7 +69,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onUpdateRouteState(url: string): void {
-    this.isRestaurantDetailRoute = /^\/restaurant\/[^\/]+$/.test(url);
+    this.isRestaurantDetailRoute = /^\/restaurant\/[^/]+$/.test(url);
   }
 
   onLogout(): void {

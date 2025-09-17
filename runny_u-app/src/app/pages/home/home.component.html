@@ -57,6 +57,7 @@
       <h2>Restaurantes disponibles en el campus</h2>
       <div class="restaurant-grid">
         <div
+          onkeypress=""
           class="restaurant-card"
           *ngFor="let restaurant of restaurants"
           (click)="router.navigate(['/restaurant', restaurant.id])"

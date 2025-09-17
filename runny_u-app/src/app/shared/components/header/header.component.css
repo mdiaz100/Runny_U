@@ -227,22 +227,7 @@ nav ul.menu-header li a:hover {
   border: 1px solid #ddd;
 }
 
-/* .modal-content-profile {
-  background: linear-gradient(135deg, #ffffff, #f9f9f9);
-  border-radius: 20px;
-  padding: 3rem 2.5rem;
-  width: 100%;
-  max-width: 500px;
-  max-height: 85vh;
-  overflow-y: auto;
-  position: relative;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #2c3e50;
-  animation: slideIn 0.4s ease-in-out;
-  border: 1px solid #dcdcdc;
-  text-align: center;
-} */
+
 
 /* Título */
 .modal-content-profile h2 {

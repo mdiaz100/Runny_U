@@ -5,7 +5,7 @@ import { Promotion } from '../interfaces/promotions.interface';
   providedIn: 'root',
 })
 export class PromotionService {
-  private promotions: Promotion[] = [
+  private readonly promotions: Promotion[] = [
     {
       badge: '20% OFF',
       image: '/assets/promociones/promosrgourmet.jpg',

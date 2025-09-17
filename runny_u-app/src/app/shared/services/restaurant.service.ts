@@ -7,9 +7,9 @@ import { Restaurant } from '../interfaces/restaurant.interface';
   providedIn: 'root',
 })
 export class RestaurantService {
-  private apiUrl = 'http://localhost:3000/api/restaurants'; 
+  private readonly apiUrl = 'http://localhost:3000/api/restaurants'; 
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
 
   getRestaurants(): Observable<Restaurant[]> {

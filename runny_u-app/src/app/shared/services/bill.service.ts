@@ -6,9 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class BillService {
-  private apiUrl = 'http://localhost:3000/api/v1/bill';
+  private readonly apiUrl = 'http://localhost:3000/api/v1/bill';
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   getBillsByUser(userId: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/user/${userId}`);

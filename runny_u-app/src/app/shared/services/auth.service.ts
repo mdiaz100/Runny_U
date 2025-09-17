@@ -11,14 +11,14 @@ import { TOKEN } from '../utils/constants';
 })
 export class AuthService {
   tokenService = inject(TokenService);
-  private userSubject = new BehaviorSubject<JwtPayload | null>(
+  private readonly userSubject = new BehaviorSubject<JwtPayload | null>(
     this.tokenService.decodeToken()
   );
   user$ = this.userSubject.asObservable();
 
-  private API_URL = 'http://localhost:3000/api/v1/auth';
+  private readonly API_URL = 'http://localhost:3000/api/v1/auth';
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   signUp(user: User): Observable<any> {
     return this.http.post(`${this.API_URL}/sign-up`, user).pipe(

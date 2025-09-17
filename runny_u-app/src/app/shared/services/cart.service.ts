@@ -8,10 +8,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartService {
   private cartItems: CartItem[] = [];
-  private totalItemsSubject = new BehaviorSubject<number>(0);
-  private cartUpdatedSubject = new Subject<void>();
-  constructor(private http: HttpClient) {}
-  private API_URL = 'http://localhost:3000/api';
+  private readonly totalItemsSubject = new BehaviorSubject<number>(0);
+  private readonly cartUpdatedSubject = new Subject<void>();
+  constructor(private readonly http: HttpClient) {}
+  private readonly API_URL = 'http://localhost:3000/api';
 
   cartUpdated$ = this.cartUpdatedSubject.asObservable();
   totalItems$ = this.totalItemsSubject.asObservable();

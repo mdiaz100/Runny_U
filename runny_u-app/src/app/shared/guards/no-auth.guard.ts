@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
   providedIn: 'root',
 })
 export class NoAuthGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private readonly authService: AuthService, private readonly router: Router) {}
 
   canActivate(): boolean {
     if (this.authService.isLoggedIn()) {
