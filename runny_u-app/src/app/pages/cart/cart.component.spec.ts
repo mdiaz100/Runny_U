@@ -168,7 +168,7 @@ describe('CartComponent', () => {
   it('debería devolver el total formateado', () => {
     const total = component.getFormattedTotal();
     expect(cartServiceMock.getTotal).toHaveBeenCalled();
-    expect(total).toContain('$'); // Usa símbolo de USD
+    expect(total).toContain('$');
   });
 
   it('debería devolver el índice en trackByItems', () => {

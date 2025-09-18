@@ -29,7 +29,7 @@ describe('TokenService', () => {
 
     localStorage.setItem(TOKEN, fakeToken);
 
-    // 🔹 Aquí reemplazamos directamente la función
+    
     (jwtDecodeLib as any).jwtDecode = jasmine
       .createSpy()
       .and.returnValue(fakePayload);

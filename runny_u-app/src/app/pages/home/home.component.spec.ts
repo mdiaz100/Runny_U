@@ -100,7 +100,7 @@ describe('HomeComponent', () => {
   });
 
   it('debería manejar error al cargar restaurantes', () => {
-    spyOn(console, 'error'); // Espiar console.error
+    spyOn(console, 'error'); 
     restaurantServiceMock.getRestaurants.and.returnValue(
       throwError(() => new Error('Error en API'))
     );
@@ -111,7 +111,7 @@ describe('HomeComponent', () => {
       'Error cargando restaurantes',
       jasmine.any(Error)
     );
-    expect(component.restaurants).toEqual([]); // debería seguir vacío
+    expect(component.restaurants).toEqual([]); 
   });
 
   it('debería cargar promociones en ngOnInit', () => {

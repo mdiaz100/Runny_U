@@ -18,7 +18,7 @@ describe('RestaurantService', () => {
   });
 
   afterEach(() => {
-    httpMock.verify(); // Verifica que no haya solicitudes pendientes
+    httpMock.verify(); 
   });
 
   it('debería crearse el servicio', () => {
@@ -68,7 +68,7 @@ describe('RestaurantService', () => {
 
     const req = httpMock.expectOne('http://localhost:3000/api/restaurants');
     expect(req.request.method).toBe('GET');
-    req.flush(mockRestaurants); // Simula la respuesta del backend
+    req.flush(mockRestaurants); 
   });
 
   it('debería obtener un restaurante por id', () => {

@@ -9,7 +9,7 @@ import { RestaurantService } from '../../services/restaurant.service';
 import { BillService } from '../../services/bill.service';
 import { JwtPayload } from '../../interfaces/jwt-payload.interface';
 
-// Mocks de servicios
+
 class MockAuthService {
   user$ = of({ id: '123', fullname: 'Test User', email: 'test@soyudemedellin.edu.co' });
   logout = jasmine.createSpy('logout');

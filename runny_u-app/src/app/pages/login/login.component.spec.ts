@@ -40,7 +40,7 @@ describe('LoginComponent', () => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
 
-    // valores válidos para el formulario
+    
     component.loginForm.setValue({
       email: 'test@soyudemedellin.edu.co',
       password: '123456'
@@ -51,7 +51,7 @@ describe('LoginComponent', () => {
     authServiceMock.login.and.returnValue(of({}));
 
     component.onSubmit();
-    tick(); // procesar promesas pendientes (Swal.fire)
+    tick(); 
 
     expect(authServiceMock.login).toHaveBeenCalledWith('test@soyudemedellin.edu.co', '123456');
     expect(Swal.fire).toHaveBeenCalledWith(jasmine.objectContaining({
@@ -65,7 +65,7 @@ describe('LoginComponent', () => {
     authServiceMock.login.and.returnValue(throwError(() => new Error('Credenciales inválidas')));
 
     component.onSubmit();
-    tick(); // procesar promesas pendientes
+    tick(); 
 
     expect(authServiceMock.login).toHaveBeenCalledWith('test@soyudemedellin.edu.co', '123456');
     expect(routerMock.navigate).not.toHaveBeenCalled();
