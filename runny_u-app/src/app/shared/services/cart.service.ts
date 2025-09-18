@@ -46,7 +46,7 @@ export class CartService {
   }
 
   removeItem(item: CartItem): void {
-    this.cartItems = this.cartItems.filter((i) => i !== item);
+    this.cartItems = this.cartItems.filter((i) => i.id !== item.id);
     this.notifyChanges();
   }
 
@@ -64,8 +64,12 @@ export class CartService {
     const total = this.cartItems.reduce((sum, item) => sum + item.quantity, 0);
     this.totalItemsSubject.next(total);
   }
+
   createCart(cartData: any) {
-    return this.http.post<CartItem>(`${this.API_URL}/v1/cart/create`, cartData);
+    return this.http.post<{ id: string; items: CartItem[] }>(
+      `${this.API_URL}/v1/cart/create`,
+      cartData
+    );
   }
 
   payCart(cartId: string): Observable<any> {

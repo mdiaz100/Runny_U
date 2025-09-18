@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { LoginComponent } from './login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { of, throwError } from 'rxjs';
@@ -21,7 +21,6 @@ describe('LoginComponent', () => {
       navigate: jasmine.createSpy('navigate')
     };
 
-    
     spyOn(Swal, 'fire').and.returnValue(
       Promise.resolve({
         isConfirmed: true,
@@ -31,7 +30,7 @@ describe('LoginComponent', () => {
     );
 
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, LoginComponent], 
+      imports: [ReactiveFormsModule, LoginComponent],
       providers: [
         { provide: AuthService, useValue: authServiceMock },
         { provide: Router, useValue: routerMock }
@@ -41,38 +40,41 @@ describe('LoginComponent', () => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
 
+    // valores válidos para el formulario
     component.loginForm.setValue({
-      email: 'test@test.com',
+      email: 'test@soyudemedellin.edu.co',
       password: '123456'
     });
   });
 
-  it('debería llamar a authService.login y navegar en caso de éxito', async () => {
+  it('debería llamar a authService.login y navegar en caso de éxito', fakeAsync(() => {
     authServiceMock.login.and.returnValue(of({}));
 
-    await component.onSubmit(); 
+    component.onSubmit();
+    tick(); // procesar promesas pendientes (Swal.fire)
 
-    expect(authServiceMock.login).toHaveBeenCalledWith('test@test.com', '123456');
+    expect(authServiceMock.login).toHaveBeenCalledWith('test@soyudemedellin.edu.co', '123456');
     expect(Swal.fire).toHaveBeenCalledWith(jasmine.objectContaining({
       icon: 'success',
       title: 'Inicio de sesión exitoso'
     }));
     expect(routerMock.navigate).toHaveBeenCalledWith(['/']);
-  });
+  }));
 
-  it('debería mostrar error si login falla', async () => {
+  it('debería mostrar error si login falla', fakeAsync(() => {
     authServiceMock.login.and.returnValue(throwError(() => new Error('Credenciales inválidas')));
 
-    await component.onSubmit();
+    component.onSubmit();
+    tick(); // procesar promesas pendientes
 
-    expect(authServiceMock.login).toHaveBeenCalledWith('test@test.com', '123456');
+    expect(authServiceMock.login).toHaveBeenCalledWith('test@soyudemedellin.edu.co', '123456');
     expect(routerMock.navigate).not.toHaveBeenCalled();
     expect(Swal.fire).toHaveBeenCalledWith(jasmine.objectContaining({
       icon: 'error',
       title: 'Error',
       text: 'Correo o contraseña incorrectos'
     }));
-  });
+  }));
 });
 
 

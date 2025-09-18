@@ -40,6 +40,7 @@ describe('SignUpComponent', () => {
     fixture = TestBed.createComponent(SignUpComponent);
     component = fixture.componentInstance;
 
+    // Valores iniciales válidos
     component.signupForm.setValue({
       fullname: 'Test User',
       email: 'test@soyudemedellin.edu.co',
