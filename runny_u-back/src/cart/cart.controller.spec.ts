@@ -32,7 +32,7 @@ describe('CartController', () => {
     service = module.get(CartService);
   });
 
-  it('✅ debería crear un carrito', async () => {
+  it('debería crear un carrito', async () => {
     const mockUser = { id: '1', email: 'u@test.com' } as User;
     const mockCart = {
       id: 'c1',
@@ -49,7 +49,7 @@ describe('CartController', () => {
     expect(result).toEqual(mockCart);
   });
 
-  it('✅ debería obtener los carritos de un usuario', async () => {
+  it('debería obtener los carritos de un usuario', async () => {
     const userId = '1';
     const mockCarts = [{ id: 'c1' }, { id: 'c2' }] as Cart[];
     service.getUserCarts.mockResolvedValue(mockCarts);
@@ -60,7 +60,7 @@ describe('CartController', () => {
     expect(result).toEqual(mockCarts);
   });
 
-  it('✅ debería obtener un carrito por id', async () => {
+  it('debería obtener un carrito por id', async () => {
     const cartId = 'c1';
     const mockCart = { id: cartId, total: 50 } as Cart;
 
@@ -72,7 +72,7 @@ describe('CartController', () => {
     expect(result).toEqual(mockCart);
   });
 
-  it('✅ debería actualizar un carrito', async () => {
+  it('debería actualizar un carrito', async () => {
     const cartId = 'c1';
     const dto: UpdateCartDto = {
       cartItem: [{ productId: 'p1', name: 'Test', price: 10, quantity: 2 , image: 'a.png'}],
@@ -87,7 +87,7 @@ describe('CartController', () => {
     expect(result).toEqual(updatedCart);
   });
 
-  it('✅ debería eliminar un carrito', async () => {
+  it('debería eliminar un carrito', async () => {
     const cartId = 'c1';
     service.deleteCart.mockResolvedValue(undefined);
 
@@ -97,7 +97,7 @@ describe('CartController', () => {
     expect(result).toBeUndefined();
   });
 
-  it('✅ debería pagar un carrito y retornar la factura', async () => {
+  it('debería pagar un carrito y retornar la factura', async () => {
     const cartId = 'c1';
     const mockBill = { id: 'b1', numberBill: 1, total: 200 } as Bill;
 

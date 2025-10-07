@@ -33,7 +33,7 @@ describe('UserController', () => {
   });
 
   describe('create', () => {
-    it('✅ debería crear un usuario y devolver resultado', async () => {
+    it('debería crear un usuario y devolver resultado', async () => {
       const createUserDto: CreateUserDto = {
         email: 'test@test.com',
         password: '123456',
@@ -49,7 +49,7 @@ describe('UserController', () => {
       expect(result).toEqual(mockResponse);
     });
 
-    it('❌ debería lanzar BadRequestException si ocurre un error', async () => {
+    it('debería lanzar BadRequestException si ocurre un error', async () => {
       const createUserDto: CreateUserDto = {
         email: 'fail@test.com',
         password: '123456',
@@ -64,7 +64,7 @@ describe('UserController', () => {
   });
 
   describe('update', () => {
-    it('✅ debería llamar al servicio update con id y dto', () => {
+    it('debería llamar al servicio update con id y dto', () => {
       const updateUserDto: UpdateUserDto = { fullname: 'Nuevo Nombre' };
       service.update.mockReturnValue('This action updates a #1 user');
 
@@ -76,7 +76,7 @@ describe('UserController', () => {
   });
 
   describe('remove', () => {
-    it('✅ debería llamar al servicio remove con id', () => {
+    it('debería llamar al servicio remove con id', () => {
       service.remove.mockReturnValue('This action removes a #1 user');
 
       const result = controller.remove('1');

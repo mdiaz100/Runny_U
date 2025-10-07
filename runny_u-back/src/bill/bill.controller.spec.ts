@@ -30,7 +30,7 @@ describe('BillController', () => {
   });
 
   describe('getBillsByUser', () => {
-    it('✅ debería retornar las facturas del usuario', async () => {
+    it('debería retornar las facturas del usuario', async () => {
       const userId = 'user1';
       const mockResponse = [
         {

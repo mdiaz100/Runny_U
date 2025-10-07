@@ -42,7 +42,7 @@ describe('AuthService', () => {
   });
 
   describe('login', () => {
-    it('✅ debería devolver token si las credenciales son correctas', async () => {
+    it('debería devolver token si las credenciales son correctas', async () => {
       const mockUser = {
         id: '1',
         email: 'test@test.com',
@@ -67,7 +67,7 @@ describe('AuthService', () => {
       });
     });
 
-    it('❌ debería lanzar NotFoundException si la contraseña es incorrecta', async () => {
+    it('debería lanzar NotFoundException si la contraseña es incorrecta', async () => {
       const mockUser = {
         id: '1',
         email: 'test@test.com',
@@ -86,7 +86,7 @@ describe('AuthService', () => {
       expect(userService.getToken).not.toHaveBeenCalled();
     });
 
-    it('❌ debería lanzar NotFoundException si el usuario no existe', async () => {
+    it(' debería lanzar NotFoundException si el usuario no existe', async () => {
       userRepository.findOneBy.mockResolvedValue(null);
 
       await expect(
@@ -99,7 +99,7 @@ describe('AuthService', () => {
   });
 
   describe('signUp', () => {
-    it('✅ debería delegar en userService.create y devolver su resultado', async () => {
+    it('debería delegar en userService.create y devolver su resultado', async () => {
       const dto = {
         fullname: 'Test User',
         email: 'test@test.com',

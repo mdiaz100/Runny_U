@@ -25,7 +25,7 @@ describe('RestaurantController', () => {
     service = module.get(RestaurantService);
   });
 
-  it('✅ debería retornar todos los restaurantes', async () => {
+  it('debería retornar todos los restaurantes', async () => {
     const mockData: RestaurantDto[] = [
       {
         id: '1',
@@ -55,7 +55,7 @@ describe('RestaurantController', () => {
     expect(result).toEqual(mockData);
   });
 
-  it('✅ debería retornar un restaurante por id', async () => {
+  it('debería retornar un restaurante por id', async () => {
     const mockRestaurant: RestaurantDto = {
       id: '1',
       name: 'Restaurante A',
@@ -74,7 +74,7 @@ describe('RestaurantController', () => {
     expect(result).toEqual(mockRestaurant);
   });
 
-  it('✅ debería retornar null si el restaurante no existe', async () => {
+  it('debería retornar null si el restaurante no existe', async () => {
     service.findById.mockResolvedValue(null);
 
     const result = await controller.findOne('99');
