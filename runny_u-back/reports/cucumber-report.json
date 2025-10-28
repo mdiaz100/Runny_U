@@ -1,0 +1,547 @@
+[
+  {
+    "description": "  Como usuario de la aplicación\n  Quiero poder registrarme e iniciar sesión\n  Para acceder a los servicios de la plataforma",
+    "elements": [
+      {
+        "description": "",
+        "id": "autenticación-de-usuarios;registro-exitoso-de-un-nuevo-usuario",
+        "keyword": "Escenario",
+        "line": 7,
+        "name": "Registro exitoso de un nuevo usuario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 817700
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 71099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 8,
+            "name": "que no existe un usuario con el email \"test@example.com\"",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\auth.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1480900
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "email",
+                      "password",
+                      "fullname"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "test@example.com",
+                      "Test123!",
+                      "Test User"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Cuando ",
+            "line": 9,
+            "name": "me registro con los siguientes datos:",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\auth.steps.ts:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 96227100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Entonces ",
+            "line": 12,
+            "name": "debería recibir un token de autenticación",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\auth.steps.ts:79"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 30227399,
+              "error_message": "AssertionError: Expected \"\" to not equal \"\"\n\nExpectation: not(equals(''))\n\nExpected string\nReceived string\n\n    at C:/Users/User/Desktop/U/Runny/Runny_U/runny_u-back/test/e2e/step-definitions/auth.steps.ts:84:12\n    at C:/Users/User/Desktop/U/Runny/Runny_U/runny_u-back/test/e2e/step-definitions/auth.steps.ts:84:12\n    at ErrorFactory.create (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\errors\\ErrorFactory.ts:36:16)\n    at Stage.createError (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\stage\\Stage.ts:328:28)\n    at RaiseErrors.create (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\errors\\RaiseErrors.ts:59:27)\n    at Ensure.performAs (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\assertions\\src\\Ensure.ts:137:41)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async World.<anonymous> (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\test\\e2e\\step-definitions\\auth.steps.ts:83:3)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Y ",
+            "line": 13,
+            "name": "la respuesta debería indicar éxito",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\auth.steps.ts:88"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "autenticación-de-usuarios;inicio-de-sesión-exitoso",
+        "keyword": "Escenario",
+        "line": 15,
+        "name": "Inicio de sesión exitoso",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 133499
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 71699
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "email",
+                      "password",
+                      "fullname"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "login@example.com",
+                      "Pass123!",
+                      "Login User"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Dado ",
+            "line": 16,
+            "name": "que existe un usuario registrado con:",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\auth.steps.ts:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 70709200
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "email",
+                      "password"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "login@example.com",
+                      "Pass123!"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Cuando ",
+            "line": 19,
+            "name": "intento iniciar sesión con:",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\auth.steps.ts:62"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 77134800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Entonces ",
+            "line": 22,
+            "name": "debería recibir un token de autenticación",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\auth.steps.ts:79"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 15405700,
+              "error_message": "AssertionError: Expected \"\" to not equal \"\"\n\nExpectation: not(equals(''))\n\nExpected string\nReceived string\n\n    at C:/Users/User/Desktop/U/Runny/Runny_U/runny_u-back/test/e2e/step-definitions/auth.steps.ts:84:12\n    at C:/Users/User/Desktop/U/Runny/Runny_U/runny_u-back/test/e2e/step-definitions/auth.steps.ts:84:12\n    at ErrorFactory.create (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\errors\\ErrorFactory.ts:36:16)\n    at Stage.createError (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\stage\\Stage.ts:328:28)\n    at RaiseErrors.create (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\errors\\RaiseErrors.ts:59:27)\n    at Ensure.performAs (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\assertions\\src\\Ensure.ts:137:41)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async World.<anonymous> (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\test\\e2e\\step-definitions\\auth.steps.ts:83:3)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Y ",
+            "line": 23,
+            "name": "la respuesta debería indicar éxito",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\auth.steps.ts:88"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "autenticación-de-usuarios;inicio-de-sesión-con-credenciales-inválidas",
+        "keyword": "Escenario",
+        "line": 25,
+        "name": "Inicio de sesión con credenciales inválidas",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 136700
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 68999
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "email",
+                      "password"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "wrong@example.com",
+                      "Wrong123!"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Cuando ",
+            "line": 26,
+            "name": "intento iniciar sesión con:",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\auth.steps.ts:62"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 70620500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Entonces ",
+            "line": 29,
+            "name": "debería recibir un error de credenciales inválidas",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\auth.steps.ts:97"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 29828199,
+              "error_message": "AssertionError: Expected \"\" to equal \"Invalid credentials\"\n\nExpectation: equals('Invalid credentials')\n\nExpected string: Invalid credentials\nReceived string\n\n    at C:/Users/User/Desktop/U/Runny/Runny_U/runny_u-back/test/e2e/step-definitions/auth.steps.ts:102:12\n    at C:/Users/User/Desktop/U/Runny/Runny_U/runny_u-back/test/e2e/step-definitions/auth.steps.ts:102:12\n    at ErrorFactory.create (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\errors\\ErrorFactory.ts:36:16)\n    at Stage.createError (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\stage\\Stage.ts:328:28)\n    at RaiseErrors.create (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\errors\\RaiseErrors.ts:59:27)\n    at Ensure.performAs (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\assertions\\src\\Ensure.ts:137:41)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async World.<anonymous> (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\test\\e2e\\step-definitions\\auth.steps.ts:101:3)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Y ",
+            "line": 30,
+            "name": "el código de error debería ser \"400\"",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\auth.steps.ts:106"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "autenticación-de-usuarios;inicio-de-sesión-con-contraseña-incorrecta",
+        "keyword": "Escenario",
+        "line": 32,
+        "name": "Inicio de sesión con contraseña incorrecta",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 68899
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 27699
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "email",
+                      "password",
+                      "fullname"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "user@example.com",
+                      "Correct1!",
+                      "Real User"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Dado ",
+            "line": 33,
+            "name": "que existe un usuario registrado con:",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\auth.steps.ts:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 72377599
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "email",
+                      "password"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "user@example.com",
+                      "Wrong123!"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Cuando ",
+            "line": 36,
+            "name": "intento iniciar sesión con:",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\auth.steps.ts:62"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 76830899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Entonces ",
+            "line": 39,
+            "name": "debería recibir un error de credenciales inválidas",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\auth.steps.ts:97"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 15490900,
+              "error_message": "AssertionError: Expected \"\" to equal \"Invalid credentials\"\n\nExpectation: equals('Invalid credentials')\n\nExpected string: Invalid credentials\nReceived string\n\n    at C:/Users/User/Desktop/U/Runny/Runny_U/runny_u-back/test/e2e/step-definitions/auth.steps.ts:102:12\n    at C:/Users/User/Desktop/U/Runny/Runny_U/runny_u-back/test/e2e/step-definitions/auth.steps.ts:102:12\n    at ErrorFactory.create (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\errors\\ErrorFactory.ts:36:16)\n    at Stage.createError (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\stage\\Stage.ts:328:28)\n    at RaiseErrors.create (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\errors\\RaiseErrors.ts:59:27)\n    at Ensure.performAs (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\assertions\\src\\Ensure.ts:137:41)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async World.<anonymous> (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\test\\e2e\\step-definitions\\auth.steps.ts:101:3)"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "autenticación-de-usuarios",
+    "line": 2,
+    "keyword": "Característica",
+    "name": "Autenticación de usuarios",
+    "tags": [],
+    "uri": "test\\e2e\\features\\auth.feature"
+  },
+  {
+    "description": "  Como usuario de la aplicación\n  Quiero poder consultar mis facturas\n  Para revisar mi historial de compras",
+    "elements": [
+      {
+        "description": "",
+        "id": "gestión-de-facturas;consultar-facturas-de-un-usuario-sin-facturas",
+        "keyword": "Escenario",
+        "line": 7,
+        "name": "Consultar facturas de un usuario sin facturas",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 101599
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 41000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Cuando ",
+            "line": 8,
+            "name": "consulto las facturas del usuario \"user-no-bills\"",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\bill.steps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 75283599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Entonces ",
+            "line": 9,
+            "name": "debería recibir una lista vacía",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\bill.steps.ts:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29274600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Y ",
+            "line": 10,
+            "name": "el código de estado debería ser 200",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\bill.steps.ts:41"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 14684900,
+              "error_message": "AssertionError: Expected 404 to equal 200\n\nExpectation: equals(200)\n\nExpected number: 200\nReceived number: 404\n\n    at C:/Users/User/Desktop/U/Runny/Runny_U/runny_u-back/test/e2e/step-definitions/bill.steps.ts:47:14\n    at C:/Users/User/Desktop/U/Runny/Runny_U/runny_u-back/test/e2e/step-definitions/bill.steps.ts:47:14\n    at ErrorFactory.create (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\errors\\ErrorFactory.ts:36:16)\n    at Stage.createError (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\stage\\Stage.ts:328:28)\n    at RaiseErrors.create (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\errors\\RaiseErrors.ts:59:27)\n    at Ensure.performAs (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\assertions\\src\\Ensure.ts:137:41)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async World.<anonymous> (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\test\\e2e\\step-definitions\\bill.steps.ts:46:5)"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gestión-de-facturas;consultar-facturas-de-un-usuario-existente",
+        "keyword": "Escenario",
+        "line": 12,
+        "name": "Consultar facturas de un usuario existente",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 58500
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 15300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Cuando ",
+            "line": 13,
+            "name": "consulto las facturas del usuario \"test-user-id\"",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\bill.steps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 77237399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Entonces ",
+            "line": 14,
+            "name": "debería recibir el código de estado 200",
+            "match": {
+              "location": "test\\e2e\\step-definitions\\bill.steps.ts:51"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 14787499,
+              "error_message": "AssertionError: Expected 404 to equal 200\n\nExpectation: equals(200)\n\nExpected number: 200\nReceived number: 404\n\n    at C:/Users/User/Desktop/U/Runny/Runny_U/runny_u-back/test/e2e/step-definitions/bill.steps.ts:57:14\n    at C:/Users/User/Desktop/U/Runny/Runny_U/runny_u-back/test/e2e/step-definitions/bill.steps.ts:57:14\n    at ErrorFactory.create (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\errors\\ErrorFactory.ts:36:16)\n    at Stage.createError (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\stage\\Stage.ts:328:28)\n    at RaiseErrors.create (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\errors\\RaiseErrors.ts:59:27)\n    at Ensure.performAs (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\assertions\\src\\Ensure.ts:137:41)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async World.<anonymous> (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-back\\test\\e2e\\step-definitions\\bill.steps.ts:56:5)"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "gestión-de-facturas",
+    "line": 2,
+    "keyword": "Característica",
+    "name": "Gestión de facturas",
+    "tags": [],
+    "uri": "test\\e2e\\features\\bill.feature"
+  }
+]
