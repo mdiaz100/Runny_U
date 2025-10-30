@@ -27,6 +27,7 @@ export class CartComponent implements OnInit, OnDestroy {
   private readonly currencyPipe = inject(CurrencyPipe);
 
   ngOnInit(): void {
+    (window as any).component = this;
     this.loadCartItems();
     this.setupCartUpdates();
   }

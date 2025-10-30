@@ -22,7 +22,10 @@ export class RestaurantComponent implements OnInit {
   restaurant: Restaurant | undefined;
   cartItems: CartItem[] | undefined;
   authService = inject(AuthService);
-  isLoggedIn: boolean = false;
+  get isLoggedIn(): boolean {
+  return this.authService.isLoggedIn();
+}
+
 
   ngOnInit(): void {
   const id = this.route.snapshot.paramMap.get('id');

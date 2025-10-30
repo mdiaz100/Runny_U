@@ -1,0 +1,2118 @@
+[
+  {
+    "description": "  Como usuario del sistema\n  Quiero gestionar los productos en mi carrito\n  Para poder realizar mis compras de manera eficiente",
+    "elements": [
+      {
+        "description": "",
+        "id": "gestión-del-carrito-de-compras;aumentar-cantidad-de-un-producto",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Aumentar cantidad de un producto",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 736594700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado en el sistema",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 260514000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "tengo productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 140593299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "que tengo un producto con cantidad 1 en el carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:46"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 30601404999,
+              "error_message": "locator.innerText: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('//li[contains(@class, \\'cart-item\\')][.//h3[contains(text(), \\'Pizza\\')]]//span[contains(@class, \\'item-quantity\\')]')\u001b[22m\n\n    at PlaywrightPageElement.text (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\playwright\\src\\screenplay\\models\\PlaywrightPageElement.ts:108:24)\n    at async MetaQuestionStatement.answeredBy (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\Question.ts:602:23)\n    at async QuestionStatement.answeredBy (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\Question.ts:602:23)\n    at async Expectation.predicate (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\questions\\Expectation.ts:134:39)\n    at async QuestionStatement.answeredBy (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\Question.ts:602:23)\n    at async Ensure.performAs (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\assertions\\src\\Ensure.ts:128:25)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async World.<anonymous> (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\e2e\\step-definitions\\cart\\cart.steps.ts:51:5)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "aumento la cantidad del producto",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:154"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "la cantidad del producto debe ser 2",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:234"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "el total del carrito debe actualizarse correctamente",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:245"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 64999,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'getInvocationParameters')\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:41:45\n    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)\n    at runInTestCaseScope (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\scope\\test_case_scope.ts:15:24)\n    at Object.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:40:29)\n    at TestCaseRunner.invokeStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:140:29)\n    at TestCaseRunner.runHook (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:282:35)\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:239:29\n    at TestCaseRunner.aroundTestStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:173:34)\n    at TestCaseRunner.runAttempt (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:225:18)\n    at async TestCaseRunner.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:191:29)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 232275399
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+",
+                "mime_type": "text/html"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cart",
+            "line": 10
+          },
+          {
+            "name": "@increase-quantity",
+            "line": 10
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gestión-del-carrito-de-compras;disminuir-cantidad-de-un-producto",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Disminuir cantidad de un producto",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 711303600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado en el sistema",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 270631200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "tengo productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 127629399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "que tengo un producto con cantidad 3 en el carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:46"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 30552414099,
+              "error_message": "locator.innerText: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('//li[contains(@class, \\'cart-item\\')][.//h3[contains(text(), \\'Pizza\\')]]//span[contains(@class, \\'item-quantity\\')]')\u001b[22m\n\n    at PlaywrightPageElement.text (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\playwright\\src\\screenplay\\models\\PlaywrightPageElement.ts:108:24)\n    at async MetaQuestionStatement.answeredBy (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\Question.ts:602:23)\n    at async QuestionStatement.answeredBy (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\Question.ts:602:23)\n    at async Expectation.predicate (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\questions\\Expectation.ts:134:39)\n    at async QuestionStatement.answeredBy (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\Question.ts:602:23)\n    at async Ensure.performAs (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\assertions\\src\\Ensure.ts:128:25)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async World.<anonymous> (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\e2e\\step-definitions\\cart\\cart.steps.ts:51:5)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "disminuyo la cantidad del producto",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:160"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "la cantidad del producto debe ser 2",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:234"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "el total del carrito debe actualizarse correctamente",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:245"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 77599,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'getInvocationParameters')\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:41:45\n    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)\n    at runInTestCaseScope (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\scope\\test_case_scope.ts:15:24)\n    at Object.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:40:29)\n    at TestCaseRunner.invokeStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:140:29)\n    at TestCaseRunner.runHook (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:282:35)\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:239:29\n    at TestCaseRunner.aroundTestStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:173:34)\n    at TestCaseRunner.runAttempt (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:225:18)\n    at async TestCaseRunner.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:191:29)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 919907999
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+",
+                "mime_type": "text/html"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cart",
+            "line": 17
+          },
+          {
+            "name": "@decrease-quantity",
+            "line": 17
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gestión-del-carrito-de-compras;eliminar-producto-cuando-la-cantidad-llega-a-cero",
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "Eliminar producto cuando la cantidad llega a cero",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 621712999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado en el sistema",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 272557899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "tengo productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 139764199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 26,
+            "name": "que tengo un producto con cantidad 1 en el carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:46"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 30541322000,
+              "error_message": "locator.innerText: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('//li[contains(@class, \\'cart-item\\')][.//h3[contains(text(), \\'Pizza\\')]]//span[contains(@class, \\'item-quantity\\')]')\u001b[22m\n\n    at PlaywrightPageElement.text (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\playwright\\src\\screenplay\\models\\PlaywrightPageElement.ts:108:24)\n    at async MetaQuestionStatement.answeredBy (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\Question.ts:602:23)\n    at async QuestionStatement.answeredBy (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\Question.ts:602:23)\n    at async Expectation.predicate (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\questions\\Expectation.ts:134:39)\n    at async QuestionStatement.answeredBy (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\Question.ts:602:23)\n    at async Ensure.performAs (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\assertions\\src\\Ensure.ts:128:25)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async World.<anonymous> (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\e2e\\step-definitions\\cart\\cart.steps.ts:51:5)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "disminuyo la cantidad del producto",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:160"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "confirmo la eliminación en el modal",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:166"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "el producto debe ser eliminado del carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:253"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "debo ver el mensaje \"Eliminado\"",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:264"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 63599,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'getInvocationParameters')\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:41:45\n    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)\n    at runInTestCaseScope (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\scope\\test_case_scope.ts:15:24)\n    at Object.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:40:29)\n    at TestCaseRunner.invokeStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:140:29)\n    at TestCaseRunner.runHook (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:282:35)\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:239:29\n    at TestCaseRunner.aroundTestStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:173:34)\n    at TestCaseRunner.runAttempt (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:225:18)\n    at async TestCaseRunner.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:191:29)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1003875599
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+",
+                "mime_type": "text/html"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cart",
+            "line": 24
+          },
+          {
+            "name": "@remove-item",
+            "line": 24
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gestión-del-carrito-de-compras;eliminar-producto-directamente",
+        "keyword": "Scenario",
+        "line": 33,
+        "name": "Eliminar producto directamente",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 730036300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado en el sistema",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 271868399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "tengo productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 141240900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 34,
+            "name": "que tengo productos en mi carrito",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 35,
+            "name": "hago clic en eliminar producto",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:172"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "confirmo la eliminación en el modal",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:166"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 37,
+            "name": "el producto debe ser eliminado del carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:253"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 38,
+            "name": "debo ver el mensaje \"Eliminado\"",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:264"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 209499,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'getInvocationParameters')\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:41:45\n    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)\n    at runInTestCaseScope (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\scope\\test_case_scope.ts:15:24)\n    at Object.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:40:29)\n    at TestCaseRunner.invokeStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:140:29)\n    at TestCaseRunner.runHook (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:282:35)\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:239:29\n    at TestCaseRunner.aroundTestStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:173:34)\n    at TestCaseRunner.runAttempt (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:225:18)\n    at async TestCaseRunner.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:191:29)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 306116699
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+",
+                "mime_type": "text/html"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cart",
+            "line": 32
+          },
+          {
+            "name": "@remove-item-direct",
+            "line": 32
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gestión-del-carrito-de-compras;cancelar-eliminación-de-producto",
+        "keyword": "Scenario",
+        "line": 41,
+        "name": "Cancelar eliminación de producto",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 781044699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado en el sistema",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 271423399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "tengo productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 155301099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "que tengo productos en mi carrito",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "hago clic en eliminar producto",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:172"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 44,
+            "name": "cancelo la eliminación en el modal",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:178"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 45,
+            "name": "el producto debe permanecer en el carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:272"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 378700,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'getInvocationParameters')\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:41:45\n    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)\n    at runInTestCaseScope (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\scope\\test_case_scope.ts:15:24)\n    at Object.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:40:29)\n    at TestCaseRunner.invokeStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:140:29)\n    at TestCaseRunner.runHook (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:282:35)\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:239:29\n    at TestCaseRunner.aroundTestStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:173:34)\n    at TestCaseRunner.runAttempt (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:225:18)\n    at async TestCaseRunner.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:191:29)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 222640599
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+",
+                "mime_type": "text/html"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cart",
+            "line": 40
+          },
+          {
+            "name": "@cancel-remove",
+            "line": 40
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gestión-del-carrito-de-compras;vaciar-carrito-completo",
+        "keyword": "Scenario",
+        "line": 48,
+        "name": "Vaciar carrito completo",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 786322400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado en el sistema",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 256805899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "tengo productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 140053800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 49,
+            "name": "que tengo 3 productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:58"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 966976999,
+              "error_message": "AssertionError: Expected cantidad de items en el carrito to equal 3\n\nExpectation: equals(3)\n\nExpected number: 3\nReceived number: 0\n\n    at C:/Users/User/Desktop/U/Runny/Runny_U/runny_u-app/e2e/step-definitions/cart/cart.steps.ts:70:14\n    at C:/Users/User/Desktop/U/Runny/Runny_U/runny_u-app/e2e/step-definitions/cart/cart.steps.ts:70:14\n    at ErrorFactory.create (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\errors\\ErrorFactory.ts:36:16)\n    at Stage.createError (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\stage\\Stage.ts:328:28)\n    at RaiseErrors.create (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\errors\\RaiseErrors.ts:59:27)\n    at Ensure.performAs (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\assertions\\src\\Ensure.ts:137:41)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async World.<anonymous> (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\e2e\\step-definitions\\cart\\cart.steps.ts:68:5)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 50,
+            "name": "hago clic en vaciar carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:184"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "confirmo vaciar el carrito en el modal",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:190"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 52,
+            "name": "el carrito debe estar vacío",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:283"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 53,
+            "name": "debo ver el mensaje \"Eliminado\"",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:264"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 109400,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'getInvocationParameters')\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:41:45\n    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)\n    at runInTestCaseScope (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\scope\\test_case_scope.ts:15:24)\n    at Object.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:40:29)\n    at TestCaseRunner.invokeStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:140:29)\n    at TestCaseRunner.runHook (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:282:35)\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:239:29\n    at TestCaseRunner.aroundTestStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:173:34)\n    at TestCaseRunner.runAttempt (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:225:18)\n    at async TestCaseRunner.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:191:29)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 71125499
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+",
+                "mime_type": "text/html"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cart",
+            "line": 47
+          },
+          {
+            "name": "@clear-cart",
+            "line": 47
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gestión-del-carrito-de-compras;cancelar-vaciado-de-carrito",
+        "keyword": "Scenario",
+        "line": 56,
+        "name": "Cancelar vaciado de carrito",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 803362399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado en el sistema",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 265139800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "tengo productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 153056800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 57,
+            "name": "que tengo productos en mi carrito",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 58,
+            "name": "hago clic en vaciar carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:184"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 59,
+            "name": "cancelo el vaciado en el modal",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:196"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 60,
+            "name": "los productos deben permanecer en el carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:289"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 121200,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'getInvocationParameters')\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:41:45\n    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)\n    at runInTestCaseScope (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\scope\\test_case_scope.ts:15:24)\n    at Object.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:40:29)\n    at TestCaseRunner.invokeStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:140:29)\n    at TestCaseRunner.runHook (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:282:35)\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:239:29\n    at TestCaseRunner.aroundTestStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:173:34)\n    at TestCaseRunner.runAttempt (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:225:18)\n    at async TestCaseRunner.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:191:29)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 238703500
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+",
+                "mime_type": "text/html"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cart",
+            "line": 55
+          },
+          {
+            "name": "@clear-cart-cancel",
+            "line": 55
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gestión-del-carrito-de-compras;intentar-vaciar-un-carrito-vacío",
+        "keyword": "Scenario",
+        "line": 63,
+        "name": "Intentar vaciar un carrito vacío",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 693742599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado en el sistema",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 238367799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "tengo productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 137833700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 64,
+            "name": "que mi carrito está vacío",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:75"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 307387400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 65,
+            "name": "intento hacer clic en vaciar carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:202"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 124925900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 66,
+            "name": "no debe ocurrir ninguna acción",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:297"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 108286900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 170299,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'getInvocationParameters')\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:41:45\n    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)\n    at runInTestCaseScope (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\scope\\test_case_scope.ts:15:24)\n    at Object.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:40:29)\n    at TestCaseRunner.invokeStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:140:29)\n    at TestCaseRunner.runHook (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:282:35)\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:239:29\n    at TestCaseRunner.aroundTestStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:173:34)\n    at TestCaseRunner.runAttempt (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:225:18)\n    at async TestCaseRunner.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:191:29)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 46038899
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+",
+                "mime_type": "text/html"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cart",
+            "line": 62
+          },
+          {
+            "name": "@empty-cart",
+            "line": 62
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gestión-del-carrito-de-compras;calcular-total-del-carrito-correctamente",
+        "keyword": "Scenario",
+        "line": 69,
+        "name": "Calcular total del carrito correctamente",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 695484899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado en el sistema",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 234826000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "tengo productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 139989800
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "producto",
+                      "precio",
+                      "cantidad"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Pizza",
+                      "15.00",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Hamburguesa",
+                      "10.50",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Given ",
+            "line": 70,
+            "name": "que tengo los siguientes productos en el carrito:",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:126"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 731060899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 74,
+            "name": "el total del carrito debe ser \"$40.50\"",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:303"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 30131874199,
+              "error_message": "locator.innerText: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator(':light(.cart-total strong)')\u001b[22m\n\n    at PlaywrightPageElement.text (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\playwright\\src\\screenplay\\models\\PlaywrightPageElement.ts:108:24)\n    at async MetaQuestionStatement.answeredBy (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\Question.ts:602:23)\n    at async QuestionStatement.answeredBy (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\Question.ts:602:23)\n    at async Expectation.predicate (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\questions\\Expectation.ts:134:39)\n    at async QuestionStatement.answeredBy (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\Question.ts:602:23)\n    at async Ensure.performAs (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\assertions\\src\\Ensure.ts:128:25)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async World.<anonymous> (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\e2e\\step-definitions\\cart\\cart.steps.ts:305:5)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 73700,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'getInvocationParameters')\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:41:45\n    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)\n    at runInTestCaseScope (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\scope\\test_case_scope.ts:15:24)\n    at Object.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:40:29)\n    at TestCaseRunner.invokeStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:140:29)\n    at TestCaseRunner.runHook (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:282:35)\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:239:29\n    at TestCaseRunner.aroundTestStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:173:34)\n    at TestCaseRunner.runAttempt (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:225:18)\n    at async TestCaseRunner.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:191:29)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 43842399
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+",
+                "mime_type": "text/html"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cart",
+            "line": 68
+          },
+          {
+            "name": "@calculate-total",
+            "line": 68
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gestión-del-carrito-de-compras;guardar-carrito-exitosamente",
+        "keyword": "Scenario",
+        "line": 77,
+        "name": "Guardar carrito exitosamente",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1402367599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado en el sistema",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 248554200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "tengo productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 148400099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 78,
+            "name": "estoy autenticado como usuario",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:84"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 139659000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 79,
+            "name": "hago clic en guardar carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:208"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 30151096500,
+              "error_message": "locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator(':light(button.checkout-btn)')\u001b[22m\n\n    at PlaywrightPageElement.scrollIntoView (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\playwright\\src\\screenplay\\models\\PlaywrightPageElement.ts:53:24)\n    at async Click.performAs (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\web\\src\\screenplay\\interactions\\Click.ts:73:9)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async World.<anonymous> (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\e2e\\step-definitions\\cart\\cart.steps.ts:209:3)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 80,
+            "name": "debo ver el mensaje \"Guardado\"",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:264"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 81,
+            "name": "el carrito debe quedar marcado como guardado",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:311"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 61199,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'getInvocationParameters')\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:41:45\n    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)\n    at runInTestCaseScope (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\scope\\test_case_scope.ts:15:24)\n    at Object.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:40:29)\n    at TestCaseRunner.invokeStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:140:29)\n    at TestCaseRunner.runHook (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:282:35)\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:239:29\n    at TestCaseRunner.aroundTestStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:173:34)\n    at TestCaseRunner.runAttempt (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:225:18)\n    at async TestCaseRunner.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:191:29)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 786803600
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+",
+                "mime_type": "text/html"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cart",
+            "line": 76
+          },
+          {
+            "name": "@save-cart",
+            "line": 76
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gestión-del-carrito-de-compras;error-al-guardar-carrito",
+        "keyword": "Scenario",
+        "line": 84,
+        "name": "Error al guardar carrito",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 678863299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado en el sistema",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 241942000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "tengo productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 138973700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 85,
+            "name": "que tengo productos en mi carrito",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 86,
+            "name": "el servicio de guardado no está disponible",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:90"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 87,
+            "name": "hago clic en guardar carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:208"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 88,
+            "name": "debo ver el mensaje de error \"No se pudo guardar el carrito\"",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:319"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 144399,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'getInvocationParameters')\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:41:45\n    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)\n    at runInTestCaseScope (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\scope\\test_case_scope.ts:15:24)\n    at Object.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:40:29)\n    at TestCaseRunner.invokeStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:140:29)\n    at TestCaseRunner.runHook (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:282:35)\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:239:29\n    at TestCaseRunner.aroundTestStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:173:34)\n    at TestCaseRunner.runAttempt (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:225:18)\n    at async TestCaseRunner.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:191:29)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 216460400
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+",
+                "mime_type": "text/html"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cart",
+            "line": 83
+          },
+          {
+            "name": "@save-cart-error",
+            "line": 83
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gestión-del-carrito-de-compras;pagar-carrito-guardado-exitosamente",
+        "keyword": "Scenario",
+        "line": 91,
+        "name": "Pagar carrito guardado exitosamente",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 674351600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado en el sistema",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 230304800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "tengo productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 141168399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 92,
+            "name": "que tengo un carrito guardado",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:94"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 30290079399,
+              "error_message": "locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator(':light(button.checkout-btn)')\u001b[22m\n\n    at PlaywrightPageElement.scrollIntoView (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\playwright\\src\\screenplay\\models\\PlaywrightPageElement.ts:53:24)\n    at async Click.performAs (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\web\\src\\screenplay\\interactions\\Click.ts:73:9)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async World.<anonymous> (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\e2e\\step-definitions\\cart\\cart.steps.ts:97:3)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 93,
+            "name": "hago clic en pagar carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:214"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 94,
+            "name": "debo ver el mensaje \"Factura Generada\"",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:264"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 95,
+            "name": "debo ver el número de factura",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:327"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 96,
+            "name": "el carrito debe vaciarse automáticamente",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:333"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 91500,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'getInvocationParameters')\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:41:45\n    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)\n    at runInTestCaseScope (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\scope\\test_case_scope.ts:15:24)\n    at Object.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:40:29)\n    at TestCaseRunner.invokeStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:140:29)\n    at TestCaseRunner.runHook (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:282:35)\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:239:29\n    at TestCaseRunner.aroundTestStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:173:34)\n    at TestCaseRunner.runAttempt (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:225:18)\n    at runNextTicks (node:internal/process/task_queues:65:5)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 887624500
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+",
+                "mime_type": "text/html"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cart",
+            "line": 90
+          },
+          {
+            "name": "@pay-cart",
+            "line": 90
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gestión-del-carrito-de-compras;intentar-pagar-carrito-sin-guardar",
+        "keyword": "Scenario",
+        "line": 99,
+        "name": "Intentar pagar carrito sin guardar",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 670755800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado en el sistema",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 247991699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "tengo productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 137934100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 100,
+            "name": "que tengo productos en mi carrito",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 101,
+            "name": "el carrito no está guardado",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:104"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 102,
+            "name": "intento hacer clic en pagar carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:220"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 103,
+            "name": "no debe ocurrir ninguna acción",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:297"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 114900,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'getInvocationParameters')\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:41:45\n    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)\n    at runInTestCaseScope (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\scope\\test_case_scope.ts:15:24)\n    at Object.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:40:29)\n    at TestCaseRunner.invokeStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:140:29)\n    at TestCaseRunner.runHook (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:282:35)\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:239:29\n    at TestCaseRunner.aroundTestStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:173:34)\n    at TestCaseRunner.runAttempt (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:225:18)\n    at async TestCaseRunner.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:191:29)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 186692100
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+",
+                "mime_type": "text/html"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cart",
+            "line": 98
+          },
+          {
+            "name": "@pay-cart-not-saved",
+            "line": 98
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gestión-del-carrito-de-compras;error-al-generar-factura",
+        "keyword": "Scenario",
+        "line": 106,
+        "name": "Error al generar factura",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 602007600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado en el sistema",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 248748800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "tengo productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 139432000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 107,
+            "name": "que tengo un carrito guardado",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:94"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 30270408400,
+              "error_message": "locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator(':light(button.checkout-btn)')\u001b[22m\n\n    at PlaywrightPageElement.scrollIntoView (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\playwright\\src\\screenplay\\models\\PlaywrightPageElement.ts:53:24)\n    at async Click.performAs (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\web\\src\\screenplay\\interactions\\Click.ts:73:9)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async World.<anonymous> (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\e2e\\step-definitions\\cart\\cart.steps.ts:97:3)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 108,
+            "name": "el servicio de facturación no está disponible",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:111"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 109,
+            "name": "hago clic en pagar carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:214"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 110,
+            "name": "debo ver el mensaje de error \"No se pudo generar la factura\"",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:319"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 71700,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'getInvocationParameters')\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:41:45\n    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)\n    at runInTestCaseScope (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\scope\\test_case_scope.ts:15:24)\n    at Object.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:40:29)\n    at TestCaseRunner.invokeStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:140:29)\n    at TestCaseRunner.runHook (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:282:35)\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:239:29\n    at TestCaseRunner.aroundTestStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:173:34)\n    at TestCaseRunner.runAttempt (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:225:18)\n    at async TestCaseRunner.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:191:29)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 816306400
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+",
+                "mime_type": "text/html"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cart",
+            "line": 105
+          },
+          {
+            "name": "@pay-cart-error",
+            "line": 105
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gestión-del-carrito-de-compras;visualizar-total-con-formato-de-moneda",
+        "keyword": "Scenario",
+        "line": 113,
+        "name": "Visualizar total con formato de moneda",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 662803100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado en el sistema",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 238243099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "tengo productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 139222000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 114,
+            "name": "que tengo productos en mi carrito con total de 123.45",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:115"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 710567700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 115,
+            "name": "debo ver el total formateado como \"$123.45\"",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:341"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 30132893700,
+              "error_message": "locator.innerText: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator(':light(.cart-total strong)')\u001b[22m\n\n    at PlaywrightPageElement.text (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\playwright\\src\\screenplay\\models\\PlaywrightPageElement.ts:108:24)\n    at async MetaQuestionStatement.answeredBy (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\Question.ts:602:23)\n    at async QuestionStatement.answeredBy (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\Question.ts:602:23)\n    at async Expectation.predicate (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\questions\\Expectation.ts:134:39)\n    at async QuestionStatement.answeredBy (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\Question.ts:602:23)\n    at async Ensure.performAs (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\assertions\\src\\Ensure.ts:128:25)\n    at async PerformActivities.perform (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@serenity-js\\core\\src\\screenplay\\abilities\\PerformActivities.ts:60:13)\n    at async World.<anonymous> (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\e2e\\step-definitions\\cart\\cart.steps.ts:343:5)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 72099,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'getInvocationParameters')\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:41:45\n    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)\n    at runInTestCaseScope (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\scope\\test_case_scope.ts:15:24)\n    at Object.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:40:29)\n    at TestCaseRunner.invokeStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:140:29)\n    at TestCaseRunner.runHook (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:282:35)\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:239:29\n    at TestCaseRunner.aroundTestStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:173:34)\n    at TestCaseRunner.runAttempt (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:225:18)\n    at async TestCaseRunner.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:191:29)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 42778599
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+",
+                "mime_type": "text/html"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cart",
+            "line": 112
+          },
+          {
+            "name": "@formatted-currency",
+            "line": 112
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gestión-del-carrito-de-compras;prueba-simple-de-navegación",
+        "keyword": "Scenario",
+        "line": 119,
+        "name": "Prueba simple de navegación",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1370408200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado en el sistema",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 248379799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "tengo productos en mi carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 137371199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 120,
+            "name": "navego al carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:226"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 109578199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 121,
+            "name": "debería ver la página del carrito",
+            "match": {
+              "location": "e2e\\step-definitions\\cart\\cart.steps.ts:349"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1127500
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 155399,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'getInvocationParameters')\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:41:45\n    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)\n    at runInTestCaseScope (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\scope\\test_case_scope.ts:15:24)\n    at Object.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\step_runner.ts:40:29)\n    at TestCaseRunner.invokeStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:140:29)\n    at TestCaseRunner.runHook (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:282:35)\n    at C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:239:29\n    at TestCaseRunner.aroundTestStep (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:173:34)\n    at TestCaseRunner.runAttempt (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:225:18)\n    at async TestCaseRunner.run (C:\\Users\\User\\Desktop\\U\\Runny\\Runny_U\\runny_u-app\\node_modules\\@cucumber\\cucumber\\src\\runtime\\test_case_runner.ts:191:29)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 242882700
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+",
+                "mime_type": "text/html"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@test-simple",
+            "line": 118
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "gestión-del-carrito-de-compras",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Gestión del carrito de compras",
+    "tags": [],
+    "uri": "e2e\\features\\cart\\shopping-cart.feature"
+  }
+]

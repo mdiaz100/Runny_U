@@ -10,11 +10,40 @@ export class CartService {
   private cartItems: CartItem[] = [];
   private readonly totalItemsSubject = new BehaviorSubject<number>(0);
   private readonly cartUpdatedSubject = new Subject<void>();
-  constructor(private readonly http: HttpClient) {}
+  private readonly STORAGE_KEY = 'cart';
+  
+  constructor(private readonly http: HttpClient) {
+    // ⭐ Carga el carrito desde localStorage al iniciar
+    this.loadCartFromStorage();
+  }
+  
   private readonly API_URL = 'http://localhost:3000/api';
 
   cartUpdated$ = this.cartUpdatedSubject.asObservable();
   totalItems$ = this.totalItemsSubject.asObservable();
+
+  // ⭐ Carga desde localStorage
+  private loadCartFromStorage(): void {
+    try {
+      const stored = localStorage.getItem(this.STORAGE_KEY);
+      if (stored) {
+        this.cartItems = JSON.parse(stored);
+        this.updateTotalItems();
+      }
+    } catch (error) {
+      console.error('Error loading cart from storage:', error);
+      this.cartItems = [];
+    }
+  }
+
+  // ⭐ Guarda en localStorage
+  private saveCartToStorage(): void {
+    try {
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.cartItems));
+    } catch (error) {
+      console.error('Error saving cart to storage:', error);
+    }
+  }
 
   getItems(): CartItem[] {
     return [...this.cartItems];
@@ -56,6 +85,7 @@ export class CartService {
   }
 
   private notifyChanges(): void {
+    this.saveCartToStorage(); // ⭐ Guarda en localStorage
     this.updateTotalItems();
     this.cartUpdatedSubject.next();
   }
